@@ -9,11 +9,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: setup node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "18"
-          cache: "npm"
-      - run: npm ci
+        uses: silverhand-io/actions-node-pnpm-run-steps@v4
       - run: npm run lint
     timeout-minutes: 10
   build:
@@ -26,11 +22,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: setup node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "18"
-          cache: "npm"
-      - run: npm ci
+        uses: silverhand-io/actions-node-pnpm-run-steps@v4
       - run: npm run build
     timeout-minutes: 10
   test:
@@ -45,11 +37,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: setup node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "18"
-          cache: "npm"
-      - run: npm ci
+        uses: silverhand-io/actions-node-pnpm-run-steps@v4
       - run: npm run test
     timeout-minutes: 10
   test-pg-integration:
@@ -78,11 +66,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: setup node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "18"
-          cache: "npm"
-      - run: npm ci
+        uses: silverhand-io/actions-node-pnpm-run-steps@v4
       - run: npm run test
         env:
           POSTGRES_DSN: postgres:postgres@localhost:5432
@@ -113,11 +97,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: setup node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "18"
-          cache: "npm"
-      - run: npm ci
+        uses: silverhand-io/actions-node-pnpm-run-steps@v4
       - run: npm run test
         env:
           POSTGRES_DSN: postgres:postgres@localhost:5432
