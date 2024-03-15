@@ -408,7 +408,7 @@ export type SqlTaggedTemplate<T extends UserQueryResultRow = QueryResultRow> = {
   jsonb: (value: SerializableValue) => JsonBinarySqlToken,
   literalValue: (value: string) => SqlSqlToken,
   timestamp: (date: Date) => TimestampSqlToken,
-  type: <U>(parser: Parser<U>) => (template: TemplateStringsArray, ...values: ValueExpression[]) => TaggedTemplateLiteralInvocation<U>,
+  type: <U extends UserQueryResultRow = T>(parser: Parser<U>) => (template: TemplateStringsArray, ...values: ValueExpression[]) => TaggedTemplateLiteralInvocation<U>,
   unnest: (
     // Value might be ReadonlyArray<ReadonlyArray<PrimitiveValueExpression>>,
     // or it can be infinitely nested array, e.g.
@@ -468,11 +468,11 @@ export type InternalNestedTransactionFunction = <T>(
 // eslint-disable-next-line @typescript-eslint/no-empty-interface, @typescript-eslint/consistent-type-definitions, @typescript-eslint/no-unused-vars
 export interface TaggedTemplateLiteralInvocation<Result extends UserQueryResultRow = QueryResultRow> extends SqlSqlToken { }
 
-export type QueryAnyFirstFunction = <T, Row = Record<string, T>>(
+export type QueryAnyFirstFunction = <T, Row extends UserQueryResultRow = Record<string, T>>(
   sql: TaggedTemplateLiteralInvocation<Row>,
   values?: PrimitiveValueExpression[],
 ) => Promise<ReadonlyArray<Row[keyof Row]>>;
-export type QueryAnyFunction = <T>(
+export type QueryAnyFunction = <T extends UserQueryResultRow = UserQueryResultRow>(
   sql: TaggedTemplateLiteralInvocation<T>,
   values?: PrimitiveValueExpression[],
 ) => Promise<readonly T[]>;
@@ -480,27 +480,27 @@ export type QueryExistsFunction = (
   sql: TaggedTemplateLiteralInvocation,
   values?: PrimitiveValueExpression[],
 ) => Promise<boolean>;
-export type QueryFunction = <T>(
+export type QueryFunction = <T extends UserQueryResultRow = UserQueryResultRow>(
   sql: TaggedTemplateLiteralInvocation<T>,
   values?: PrimitiveValueExpression[],
 ) => Promise<QueryResult<T>>;
-export type QueryManyFirstFunction = <T, Row = Record<string, T>>(
+export type QueryManyFirstFunction = <T, Row extends UserQueryResultRow = Record<string, T>>(
   sql: TaggedTemplateLiteralInvocation<Row>,
   values?: PrimitiveValueExpression[],
 ) => Promise<ReadonlyArray<Row[keyof Row]>>;
-export type QueryManyFunction = <T>(
+export type QueryManyFunction = <T extends UserQueryResultRow>(
   sql: TaggedTemplateLiteralInvocation<T>,
   values?: PrimitiveValueExpression[],
 ) => Promise<readonly T[]>;
-export type QueryMaybeOneFirstFunction = <T, Row = Record<string, T>>(
+export type QueryMaybeOneFirstFunction = <T, Row extends UserQueryResultRow = Record<string, T>>(
   sql: TaggedTemplateLiteralInvocation<Row>,
   values?: PrimitiveValueExpression[],
 ) => Promise<Row[keyof Row] | null>;
-export type QueryMaybeOneFunction = <T>(
+export type QueryMaybeOneFunction = <T extends UserQueryResultRow>(
   sql: TaggedTemplateLiteralInvocation<T>,
   values?: PrimitiveValueExpression[],
 ) => Promise<T | null>;
-export type QueryOneFirstFunction = <T, Row = Record<string, T>>(
+export type QueryOneFirstFunction = <T, Row extends UserQueryResultRow = Record<string, T>>(
   sql: TaggedTemplateLiteralInvocation<Row>,
   values?: PrimitiveValueExpression[],
 ) => Promise<Row[keyof Row]>;
