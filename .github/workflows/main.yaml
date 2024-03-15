@@ -1,7 +1,6 @@
 jobs:
   lint:
     runs-on: ubuntu-latest
-    environment: release
     name: Lint
     steps:
       - name: setup repository
@@ -16,7 +15,6 @@ jobs:
     env:
       TEST_ONLY_NON_INTEGRATION: 'true'
     runs-on: ubuntu-latest
-    environment: release
     name: Test
     steps:
       - name: setup repository
@@ -45,7 +43,6 @@ jobs:
           --health-timeout 5s
           --health-retries 5
     runs-on: ubuntu-latest
-    environment: release
     name: Test "pg" integration
     steps:
       - name: setup repository
@@ -76,7 +73,6 @@ jobs:
           --health-timeout 5s
           --health-retries 5
     runs-on: ubuntu-latest
-    environment: release
     name: Test "postgres" integration
     steps:
       - name: setup repository
@@ -96,7 +92,6 @@ jobs:
       - test-pg-integration
       - test-postgres-integration
     runs-on: ubuntu-latest
-    environment: release
     name: Release
     steps:
       - name: setup repository
