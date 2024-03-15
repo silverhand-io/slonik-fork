@@ -1,10 +1,3 @@
-import anyTest, {
-  type TestFn,
-} from 'ava';
-import {
-  Roarr,
-} from 'roarr';
-import * as sinon from 'sinon';
 import {
   type TaggedTemplateLiteralInvocation,
 } from '../../../src';
@@ -23,6 +16,13 @@ import {
 import {
   createErrorWithCode,
 } from '../../helpers/createErrorWithCode';
+import anyTest, {
+  type TestFn,
+} from 'ava';
+import {
+  Roarr,
+} from 'roarr';
+import * as sinon from 'sinon';
 
 const test = anyTest as TestFn<any>;
 const {

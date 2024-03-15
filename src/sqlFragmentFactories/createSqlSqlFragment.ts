@@ -2,8 +2,8 @@ import {
   UnexpectedStateError,
 } from '../errors';
 import {
-  type SqlSqlToken,
   type SqlFragment,
+  type SqlSqlToken,
 } from '../types';
 
 export const createSqlSqlFragment = (token: SqlSqlToken, greatestParameterPosition: number): SqlFragment => {
@@ -12,7 +12,7 @@ export const createSqlSqlFragment = (token: SqlSqlToken, greatestParameterPositi
   let leastMatchedParameterPosition = Number.POSITIVE_INFINITY;
   let greatestMatchedParameterPosition = 0;
 
-  sql += token.sql.replace(/\$(\d+)/gu, (match, g1) => {
+  sql += token.sql.replaceAll(/\$(\d+)/gu, (match, g1) => {
     const parameterPosition = Number.parseInt(g1, 10);
 
     if (parameterPosition > greatestMatchedParameterPosition) {

@@ -1,3 +1,14 @@
+import {
+  InvalidInputError,
+} from '../errors';
+import {
+  Logger,
+} from '../Logger';
+import {
+  type JsonBinarySqlToken,
+  type JsonSqlToken,
+  type SqlFragment,
+} from '../types';
 import safeStringify from 'fast-safe-stringify';
 import {
   isPlainObject,
@@ -5,17 +16,6 @@ import {
 import {
   serializeError,
 } from 'serialize-error';
-import {
-  Logger,
-} from '../Logger';
-import {
-  InvalidInputError,
-} from '../errors';
-import {
-  type JsonBinarySqlToken,
-  type JsonSqlToken,
-  type SqlFragment,
-} from '../types';
 
 const log = Logger.child({
   namespace: 'createJsonSqlFragment',

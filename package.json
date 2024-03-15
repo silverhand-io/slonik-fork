@@ -38,8 +38,8 @@
     "ava": "^4.1.0",
     "coveralls": "^3.1.1",
     "delay": "^5.0.0",
-    "eslint": "^8.20.0",
-    "eslint-config-canonical": "^35.1.4",
+    "eslint": "^8.57.0",
+    "eslint-config-canonical": "^42.8.1",
     "expect-type": "^0.13.0",
     "nyc": "^15.1.0",
     "pg-native": "^3.0.0",
@@ -87,7 +87,7 @@
   },
   "scripts": {
     "build": "rm -fr ./dist && tsc",
-    "lint": "eslint ./src ./test && tsc --noEmit",
+    "lint": "eslint ./src ./test",
     "test": "nyc ava --verbose --serial"
   },
   "types": "./dist/src/index.d.ts",

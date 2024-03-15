@@ -1,5 +1,3 @@
-import type Stream from 'stream';
-import through from 'through2';
 import {
   QueryStream,
 } from '../QueryStream';
@@ -10,6 +8,10 @@ import {
   type Interceptor,
   type InternalStreamFunction,
 } from '../types';
+import type Stream from 'stream';
+import {
+  obj,
+} from 'through2';
 
 export const stream: InternalStreamFunction = async (connectionLogger, connection, clientConfiguration, slonikSql, streamHandler, uid, options) => {
   return await executeQuery(
@@ -36,7 +38,7 @@ export const stream: InternalStreamFunction = async (connectionLogger, connectio
           reject(error);
         });
 
-        const transformedStream = queryStream.pipe(through.obj(function (datum, enc, callback) {
+        const transformedStream = queryStream.pipe(obj(function (datum, enc, callback) {
           let finalRow = datum.row;
 
           if (rowTransformers.length) {

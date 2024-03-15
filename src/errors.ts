@@ -1,8 +1,8 @@
-import ExtendableError from 'es6-error';
 import {
   type ParserIssue,
   type SerializableValue,
 } from './types';
+import ExtendableError from 'es6-error';
 
 export class SlonikError extends ExtendableError {}
 

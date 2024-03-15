@@ -1,9 +1,6 @@
 /* eslint-disable canonical/id-match */
 
 import {
-  type PoolConfig,
-} from 'pg';
-import {
   Logger as log,
 } from '../Logger';
 import {
@@ -12,6 +9,9 @@ import {
 import {
   parseDsn,
 } from '../utilities';
+import {
+  type PoolConfig,
+} from 'pg';
 
 export const createPoolConfiguration = (dsn: string, clientConfiguration: ClientConfiguration): PoolConfig => {
   const connectionOptions = parseDsn(dsn);

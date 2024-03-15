@@ -1,7 +1,4 @@
 import {
-  type Pool as PgPool,
-} from 'pg';
-import {
   assertSqlSqlToken,
 } from '../assertions';
 import {
@@ -19,6 +16,9 @@ import {
   type Logger,
   type TaggedTemplateLiteralInvocation,
 } from '../types';
+import {
+  type Pool as PgPool,
+} from 'pg';
 
 export const bindPool = (
   parentLog: Logger,

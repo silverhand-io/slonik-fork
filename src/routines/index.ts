@@ -1,6 +1,6 @@
 export {
-  executeQuery,
-} from './executeQuery';
-export {
   createTypeOverrides,
 } from './createTypeOverrides';
+export {
+  executeQuery,
+} from './executeQuery';

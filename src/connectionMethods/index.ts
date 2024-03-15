@@ -5,11 +5,11 @@ export {
   anyFirst,
 } from './anyFirst';
 export {
-  exists,
-} from './exists';
-export {
   copyFromBinary,
 } from './copyFromBinary';
+export {
+  exists,
+} from './exists';
 export {
   many,
 } from './many';

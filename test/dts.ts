@@ -2,39 +2,38 @@
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {
-  expectTypeOf,
-} from 'expect-type';
-import {
   CheckIntegrityConstraintViolationError,
-  DataIntegrityError,
-  ForeignKeyIntegrityConstraintViolationError,
-  IntegrityConstraintViolationError,
-  InvalidConfigurationError,
-  NotFoundError,
-  NotNullIntegrityConstraintViolationError,
-  SlonikError,
-  StatementCancelledError,
-  StatementTimeoutError,
-  UniqueIntegrityConstraintViolationError,
+  type ClientConfiguration,
+  type ClientConfigurationInput,
+  type CommonQueryMethods,
   createBigintTypeParser,
   createPool,
   createSqlTag,
   createTimestampTypeParser,
   createTimestampWithTimeZoneTypeParser,
   createTypeParserPreset,
-  sql,
-
-  type ClientConfigurationInput,
-  type ClientConfiguration,
-  type CommonQueryMethods,
+  DataIntegrityError,
+  ForeignKeyIntegrityConstraintViolationError,
   type IdentifierNormalizer,
+  IntegrityConstraintViolationError,
   type Interceptor,
+  InvalidConfigurationError,
+  NotFoundError,
+  NotNullIntegrityConstraintViolationError,
   type QueryContext,
-  type QueryResultRowColumn,
   type QueryResult,
+  type QueryResultRowColumn,
+  SlonikError,
+  sql,
   type SqlTaggedTemplate,
+  StatementCancelledError,
+  StatementTimeoutError,
   type TypeParser,
+  UniqueIntegrityConstraintViolationError,
 } from '../src';
+import {
+  expectTypeOf,
+} from 'expect-type';
 
 const poolTypes = async () => {
   const pool = await createPool('postgres://localhost');

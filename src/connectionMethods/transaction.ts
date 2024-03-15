@@ -1,7 +1,4 @@
 import {
-  serializeError,
-} from 'serialize-error';
-import {
   bindTransactionConnection,
 } from '../binders';
 import {
@@ -20,6 +17,9 @@ import {
 import {
   createUid,
 } from '../utilities';
+import {
+  serializeError,
+} from 'serialize-error';
 
 const execTransaction: InternalTransactionFunction = async (
   parentLog,

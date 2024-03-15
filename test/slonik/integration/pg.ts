@@ -1,14 +1,14 @@
 import {
-  Pool as PgPool,
-} from 'pg';
-import {
   createPool,
   sql,
 } from '../../../src';
 import {
-  createTestRunner,
   createIntegrationTests,
+  createTestRunner,
 } from '../../helpers/createIntegrationTests';
+import {
+  Pool as PgPool,
+} from 'pg';
 
 const {
   test,

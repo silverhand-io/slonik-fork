@@ -1,11 +1,11 @@
-import test from 'ava';
-import * as sinon from 'sinon';
 import {
   createSqlTag,
 } from '../../../../../src/factories/createSqlTag';
 import {
   createPool,
 } from '../../../../helpers/createPool';
+import test from 'ava';
+import * as sinon from 'sinon';
 
 const sql = createSqlTag();
 

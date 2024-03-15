@@ -1,13 +1,13 @@
 import {
-  Readable,
-} from 'stream';
+  type TypeNameIdentifier,
+} from '../types';
 import createConcatStream from 'concat-stream';
 import {
   rowWriter as createEncoder,
 } from 'pg-copy-streams-binary';
 import {
-  type TypeNameIdentifier,
-} from '../types';
+  Readable,
+} from 'stream';
 
 export const encodeTupleList = (
   tupleList: ReadonlyArray<readonly unknown[]>,

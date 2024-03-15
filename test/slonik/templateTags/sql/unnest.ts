@@ -1,10 +1,10 @@
-import test from 'ava';
 import {
   createSqlTag,
 } from '../../../../src/factories/createSqlTag';
 import {
   SqlToken,
 } from '../../../../src/tokens';
+import test from 'ava';
 
 const sql = createSqlTag();
 

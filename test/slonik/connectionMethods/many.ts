@@ -1,4 +1,3 @@
-import test from 'ava';
 import {
   NotFoundError,
 } from '../../../src/errors';
@@ -8,6 +7,7 @@ import {
 import {
   createPool,
 } from '../../helpers/createPool';
+import test from 'ava';
 
 const sql = createSqlTag();
 

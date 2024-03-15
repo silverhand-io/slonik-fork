@@ -1,3 +1,9 @@
+import {
+  createSqlTag,
+} from '../../../../src/factories/createSqlTag';
+import {
+  SqlToken,
+} from '../../../../src/tokens';
 import anyTest, {
   type TestFn,
 } from 'ava';
@@ -7,12 +13,6 @@ import {
 import {
   z,
 } from 'zod';
-import {
-  createSqlTag,
-} from '../../../../src/factories/createSqlTag';
-import {
-  SqlToken,
-} from '../../../../src/tokens';
 
 const test = anyTest as TestFn<{
   logs: unknown[],

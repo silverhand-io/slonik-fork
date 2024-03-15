@@ -1,10 +1,9 @@
-import safeStringify from 'fast-safe-stringify';
-import {
-  Logger,
-} from '../Logger';
 import {
   InvalidInputError,
 } from '../errors';
+import {
+  Logger,
+} from '../Logger';
 import {
   ArrayToken,
   BinaryToken,
@@ -47,6 +46,7 @@ import {
 import {
   createSqlTokenSqlFragment,
 } from './createSqlTokenSqlFragment';
+import safeStringify from 'fast-safe-stringify';
 
 const log = Logger.child({
   namespace: 'sql',

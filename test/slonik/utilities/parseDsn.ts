@@ -1,10 +1,10 @@
-import test from 'ava';
 import {
   type ConnectionOptions,
 } from '../../../src/types';
 import {
   parseDsn,
 } from '../../../src/utilities';
+import test from 'ava';
 
 const testParse = test.macro((t, connectionOptions: ConnectionOptions) => {
   t.deepEqual(parseDsn(t.title), connectionOptions);

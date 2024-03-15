@@ -1,4 +1,7 @@
 import {
+  type TypeParser,
+} from '../types';
+import {
   type Client as PgClient,
 } from 'pg';
 import {
@@ -7,9 +10,6 @@ import {
 import {
   parse as parseArray,
 } from 'postgres-array';
-import {
-  type TypeParser,
-} from '../types';
 
 type PostgresType = {
   oid: string,

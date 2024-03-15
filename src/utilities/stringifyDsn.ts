@@ -1,9 +1,9 @@
 import {
-  stringify,
-} from 'querystring';
-import {
   type ConnectionOptions,
 } from '../types';
+import {
+  stringify,
+} from 'querystring';
 
 type NamedParameters = {
   application_name?: string,

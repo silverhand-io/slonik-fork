@@ -2,9 +2,9 @@ import {
   InvalidInputError,
 } from '../errors';
 import {
+  type PrimitiveValueExpression,
   type SqlFragment,
   type UnnestSqlToken,
-  type PrimitiveValueExpression,
 } from '../types';
 import {
   countArrayDimensions,

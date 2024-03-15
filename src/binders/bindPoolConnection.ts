@@ -1,7 +1,4 @@
 import {
-  type PoolClient as PgPoolClient,
-} from 'pg';
-import {
   assertSqlSqlToken,
 } from '../assertions';
 import {
@@ -24,6 +21,9 @@ import {
   type DatabasePoolConnection,
   type Logger,
 } from '../types';
+import {
+  type PoolClient as PgPoolClient,
+} from 'pg';
 
 export const bindPoolConnection = (
   parentLog: Logger,

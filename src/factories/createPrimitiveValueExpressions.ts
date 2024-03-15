@@ -1,13 +1,13 @@
-import safeStringify from 'fast-safe-stringify';
-import {
-  Logger,
-} from '../Logger';
 import {
   UnexpectedStateError,
 } from '../errors';
 import {
+  Logger,
+} from '../Logger';
+import {
   type PrimitiveValueExpression,
 } from '../types';
+import safeStringify from 'fast-safe-stringify';
 
 const log = Logger.child({
   namespace: 'createPrimitiveValueExpressions',

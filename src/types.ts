@@ -1,14 +1,11 @@
 import {
-  type Readable,
-  type ReadableOptions,
-} from 'stream';
+  type SlonikError,
+} from './errors';
+import type * as tokens from './tokens';
 import {
-  type ConnectionOptions as TlsConnectionOptions,
-} from 'tls';
-import {
-  type PoolConfig,
   type Pool as PgPool,
   type PoolClient as PgPoolClient,
+  type PoolConfig,
 } from 'pg';
 import {
   type NoticeMessage as Notice,
@@ -17,9 +14,12 @@ import {
   type Logger,
 } from 'roarr';
 import {
-  type SlonikError,
-} from './errors';
-import type * as tokens from './tokens';
+  type Readable,
+  type ReadableOptions,
+} from 'stream';
+import {
+  type ConnectionOptions as TlsConnectionOptions,
+} from 'tls';
 
 /**
  * @see https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-PARAMKEYWORDS

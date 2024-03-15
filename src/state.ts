@@ -1,16 +1,16 @@
 import {
+  UnexpectedStateError,
+} from './errors';
+import {
+  type TypeOverrides,
+} from './types';
+import {
   type DeferredPromise,
 } from 'p-defer';
 import {
   type Pool as PgPool,
   type PoolClient as PgClientPool,
 } from 'pg';
-import {
-  UnexpectedStateError,
-} from './errors';
-import {
-  type TypeOverrides,
-} from './types';
 
 type PoolState = {
   ended: boolean,

@@ -1,7 +1,4 @@
 import {
-  type PoolClient as PgPoolClient,
-} from 'pg';
-import {
   assertSqlSqlToken,
 } from '../assertions';
 import {
@@ -15,8 +12,8 @@ import {
   nestedTransaction,
   one,
   oneFirst,
-  stream,
   query as queryMethod,
+  stream,
 } from '../connectionMethods';
 import {
   getPoolClientState,
@@ -26,6 +23,9 @@ import {
   type DatabaseTransactionConnection,
   type Logger,
 } from '../types';
+import {
+  type PoolClient as PgPoolClient,
+} from 'pg';
 
 export const bindTransactionConnection = (
   parentLog: Logger,

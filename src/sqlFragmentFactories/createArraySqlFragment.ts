@@ -1,6 +1,6 @@
 import {
-  UnexpectedStateError,
   InvalidInputError,
+  UnexpectedStateError,
 } from '../errors';
 import {
   createSqlTokenSqlFragment,

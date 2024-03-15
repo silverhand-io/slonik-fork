@@ -1,7 +1,4 @@
 import {
-  type QueryResult as PgQueryResult,
-} from 'pg';
-import {
   executeQuery,
 } from '../routines';
 import {
@@ -9,6 +6,9 @@ import {
   type Notice,
   type QueryResult,
 } from '../types';
+import {
+  type QueryResult as PgQueryResult,
+} from 'pg';
 
 export const query: InternalQueryMethod = async (
   connectionLogger,
