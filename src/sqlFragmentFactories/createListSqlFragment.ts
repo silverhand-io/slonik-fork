@@ -6,10 +6,9 @@ import {
   createSqlTokenSqlFragment,
 } from '../factories';
 import {
-  type PrimitiveValueExpression,
-
-  type SqlFragment,
   type ListSqlToken,
+  type PrimitiveValueExpression,
+  type SqlFragment,
 } from '../types';
 import {
   isPrimitiveValueExpression,

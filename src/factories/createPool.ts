@@ -1,16 +1,9 @@
 import {
-  Client as PgClient,
-  Pool as PgPool,
-} from 'pg';
-import {
-  serializeError,
-} from 'serialize-error';
+  bindPool,
+} from '../binders/bindPool';
 import {
   Logger,
 } from '../Logger';
-import {
-  bindPool,
-} from '../binders/bindPool';
 import {
   createTypeOverrides,
 } from '../routines';
@@ -30,6 +23,13 @@ import {
 import {
   createPoolConfiguration,
 } from './createPoolConfiguration';
+import {
+  Client as PgClient,
+  Pool as PgPool,
+} from 'pg';
+import {
+  serializeError,
+} from 'serialize-error';
 
 /**
  * @param connectionUri PostgreSQL [Connection URI](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING).

@@ -1,7 +1,7 @@
-import test from 'ava';
 import {
   escapeLiteralValue,
 } from '../../../src/utilities';
+import test from 'ava';
 
 test('escapes SQL literal value', (t) => {
   t.is(escapeLiteralValue('foo'), '\'foo\'');

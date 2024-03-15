@@ -2,8 +2,8 @@ import {
   InvalidInputError,
 } from '../errors';
 import {
-  type TimestampSqlToken,
   type SqlFragment,
+  type TimestampSqlToken,
 } from '../types';
 
 export const createTimestampSqlFragment = (token: TimestampSqlToken, greatestParameterPosition: number): SqlFragment => {

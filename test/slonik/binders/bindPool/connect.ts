@@ -1,12 +1,12 @@
 /* eslint-disable ava/max-asserts */
 
-import test from 'ava';
 import {
   createSqlTag,
 } from '../../../../src/factories/createSqlTag';
 import {
   createPool,
 } from '../../../helpers/createPool';
+import test from 'ava';
 
 const sql = createSqlTag();
 

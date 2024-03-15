@@ -1,6 +1,3 @@
-import test from 'ava';
-import delay from 'delay';
-import * as sinon from 'sinon';
 import {
   BackendTerminatedError,
   CheckIntegrityConstraintViolationError,
@@ -17,6 +14,9 @@ import {
 import {
   createPool,
 } from '../../../helpers/createPool';
+import test from 'ava';
+import delay from 'delay';
+import * as sinon from 'sinon';
 
 const sql = createSqlTag();
 

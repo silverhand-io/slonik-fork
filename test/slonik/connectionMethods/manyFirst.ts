@@ -1,4 +1,3 @@
-import test from 'ava';
 import {
   DataIntegrityError,
   NotFoundError,
@@ -9,6 +8,7 @@ import {
 import {
   createPool,
 } from '../../helpers/createPool';
+import test from 'ava';
 
 const sql = createSqlTag();
 

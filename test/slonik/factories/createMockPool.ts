@@ -1,5 +1,3 @@
-import test from 'ava';
-import * as sinon from 'sinon';
 import {
   DataIntegrityError,
   sql,
@@ -10,6 +8,8 @@ import {
 import {
   createMockQueryResult,
 } from '../../../src/factories/createMockQueryResult';
+import test from 'ava';
+import * as sinon from 'sinon';
 
 test('executes a mock query (pool.query)', async (t) => {
   t.plan(4);

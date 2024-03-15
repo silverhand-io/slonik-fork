@@ -1,10 +1,10 @@
-import test from 'ava';
 import {
   createClientConfiguration,
 } from '../../../src/factories/createClientConfiguration';
 import {
   createTypeParserPreset,
 } from '../../../src/factories/createTypeParserPreset';
+import test from 'ava';
 
 const defaultConfiguration = {
   captureStackTrace: false,

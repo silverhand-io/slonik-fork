@@ -1,4 +1,40 @@
 import {
+  TRANSACTION_ROLLBACK_ERROR_PREFIX,
+} from '../constants';
+import {
+  BackendTerminatedError,
+  CheckIntegrityConstraintViolationError,
+  ForeignKeyIntegrityConstraintViolationError,
+  InvalidInputError,
+  NotNullIntegrityConstraintViolationError,
+  SchemaValidationError,
+  StatementCancelledError,
+  StatementTimeoutError,
+  TupleMovedToAnotherPartitionError,
+  UnexpectedStateError,
+  UniqueIntegrityConstraintViolationError,
+} from '../errors';
+import {
+  getPoolClientState,
+} from '../state';
+import {
+  type ClientConfiguration,
+  type Interceptor,
+  type Logger,
+  type Notice,
+  type Parser,
+  type PrimitiveValueExpression,
+  type Query,
+  type QueryContext,
+  type QueryId,
+  type QueryResult,
+  type QueryResultRow,
+  type TaggedTemplateLiteralInvocation,
+} from '../types';
+import {
+  createQueryId,
+} from '../utilities';
+import {
   getStackTrace,
 } from 'get-stack-trace';
 import Deferred from 'p-defer';
@@ -8,42 +44,6 @@ import {
 import {
   serializeError,
 } from 'serialize-error';
-import {
-  TRANSACTION_ROLLBACK_ERROR_PREFIX,
-} from '../constants';
-import {
-  BackendTerminatedError,
-  CheckIntegrityConstraintViolationError,
-  ForeignKeyIntegrityConstraintViolationError,
-  InvalidInputError,
-  NotNullIntegrityConstraintViolationError,
-  StatementCancelledError,
-  StatementTimeoutError,
-  UnexpectedStateError,
-  UniqueIntegrityConstraintViolationError,
-  TupleMovedToAnotherPartitionError,
-  SchemaValidationError,
-} from '../errors';
-import {
-  getPoolClientState,
-} from '../state';
-import {
-  type Interceptor,
-  type ClientConfiguration,
-  type Logger,
-  type Notice,
-  type PrimitiveValueExpression,
-  type QueryContext,
-  type QueryId,
-  type QueryResultRow,
-  type QueryResult,
-  type Query,
-  type TaggedTemplateLiteralInvocation,
-  type Parser,
-} from '../types';
-import {
-  createQueryId,
-} from '../utilities';
 
 type GenericQueryResult = QueryResult<QueryResultRow>;
 

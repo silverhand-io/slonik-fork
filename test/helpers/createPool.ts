@@ -1,5 +1,3 @@
-import EventEmitter from 'events';
-import * as sinon from 'sinon';
 import {
   bindPool,
 } from '../../src/binders/bindPool';
@@ -12,6 +10,8 @@ import {
 import {
   Logger as log,
 } from './Logger';
+import EventEmitter from 'events';
+import * as sinon from 'sinon';
 
 const defaultConfiguration = {
   interceptors: [],

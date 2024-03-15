@@ -2,8 +2,8 @@ import {
   InvalidConfigurationError,
 } from '../errors';
 import {
-  type ClientConfigurationInput,
   type ClientConfiguration,
+  type ClientConfigurationInput,
   type TypeParser,
 } from '../types';
 import {

@@ -1,9 +1,9 @@
 import {
-  Logger,
-} from '../Logger';
-import {
   bindPool,
 } from '../binders/bindPool';
+import {
+  Logger,
+} from '../Logger';
 import {
   poolStateMap,
 } from '../state';

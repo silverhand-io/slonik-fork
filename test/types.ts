@@ -4,12 +4,6 @@
  */
 
 import {
-  expectTypeOf,
-} from 'expect-type';
-import {
-  z,
-} from 'zod';
-import {
   createPool,
   sql,
 } from '../src';
@@ -17,6 +11,12 @@ import {
   type PrimitiveValueExpression,
   type QueryResult,
 } from '../src/types';
+import {
+  expectTypeOf,
+} from 'expect-type';
+import {
+  z,
+} from 'zod';
 
 const ZodRow = z.object({
   bar: z.boolean(),

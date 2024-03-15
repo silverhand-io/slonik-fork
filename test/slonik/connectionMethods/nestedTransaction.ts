@@ -1,5 +1,3 @@
-import test from 'ava';
-import * as sinon from 'sinon';
 import {
   createClientConfiguration,
 } from '../../helpers/createClientConfiguration';
@@ -9,6 +7,8 @@ import {
 import {
   createPool,
 } from '../../helpers/createPool';
+import test from 'ava';
+import * as sinon from 'sinon';
 
 test('creates a savepoint', async (t) => {
   const pool = await createPool();

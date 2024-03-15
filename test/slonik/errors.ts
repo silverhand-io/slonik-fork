@@ -1,8 +1,8 @@
-import test from 'ava';
 import {
   IntegrityConstraintViolationError,
   StatementCancelledError,
 } from '../../src';
+import test from 'ava';
 
 test('IntegrityConstraintViolationError default message', (t) => {
   t.is(

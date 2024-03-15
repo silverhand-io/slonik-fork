@@ -1,11 +1,11 @@
-import test from 'ava';
-import delay from 'delay';
 import {
   createSqlTag,
 } from '../../../../src/factories/createSqlTag';
 import {
   createPool,
 } from '../../../helpers/createPool';
+import test from 'ava';
+import delay from 'delay';
 
 const sql = createSqlTag();
 
