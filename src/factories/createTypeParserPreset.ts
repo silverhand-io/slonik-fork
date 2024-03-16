@@ -1,6 +1,6 @@
 import {
   type TypeParser,
-} from '../types';
+} from '../types.js';
 import {
   createBigintTypeParser,
   createDateTypeParser,
@@ -8,7 +8,7 @@ import {
   createNumericTypeParser,
   createTimestampTypeParser,
   createTimestampWithTimeZoneTypeParser,
-} from './typeParsers';
+} from './typeParsers/index.js';
 
 export const createTypeParserPreset = (): readonly TypeParser[] => {
   return [

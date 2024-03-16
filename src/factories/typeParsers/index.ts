@@ -1,18 +1,18 @@
 export {
   createBigintTypeParser,
-} from './createBigintTypeParser';
+} from './createBigintTypeParser.js';
 export {
   createDateTypeParser,
-} from './createDateTypeParser';
+} from './createDateTypeParser.js';
 export {
   createIntervalTypeParser,
-} from './createIntervalTypeParser';
+} from './createIntervalTypeParser.js';
 export {
   createNumericTypeParser,
-} from './createNumericTypeParser';
+} from './createNumericTypeParser.js';
 export {
   createTimestampTypeParser,
-} from './createTimestampTypeParser';
+} from './createTimestampTypeParser.js';
 export {
   createTimestampWithTimeZoneTypeParser,
-} from './createTimestampWithTimeZoneTypeParser';
+} from './createTimestampWithTimeZoneTypeParser.js';

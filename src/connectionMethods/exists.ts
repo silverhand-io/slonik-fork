@@ -1,16 +1,16 @@
 import {
   DataIntegrityError,
-} from '../errors';
+} from '../errors.js';
 import {
   type InternalQueryMethod,
   type TaggedTemplateLiteralInvocation,
-} from '../types';
+} from '../types.js';
 import {
   createQueryId,
-} from '../utilities';
+} from '../utilities/index.js';
 import {
   query,
-} from './query';
+} from './query.js';
 
 export const exists: InternalQueryMethod<Promise<boolean>> = async (log, connection, clientConfiguration, slonikSql, inheritedQueryId) => {
   const queryId = inheritedQueryId ?? createQueryId();

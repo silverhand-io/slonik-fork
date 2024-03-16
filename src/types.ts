@@ -1,7 +1,7 @@
 import {
   type SlonikError,
-} from './errors';
-import type * as tokens from './tokens';
+} from './errors.js';
+import type * as tokens from './tokens.js';
 import {
   type Pool as PgPool,
   type PoolClient as PgPoolClient,
@@ -9,7 +9,7 @@ import {
 } from 'pg';
 import {
   type NoticeMessage as Notice,
-} from 'pg-protocol/dist/messages';
+} from 'pg-protocol/dist/messages.js';
 import {
   type Logger,
 } from 'roarr';
@@ -516,4 +516,4 @@ export type TypeOverrides = {
 
 export {
   NoticeMessage as Notice,
-} from 'pg-protocol/dist/messages';
+} from 'pg-protocol/dist/messages.js';

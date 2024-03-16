@@ -1,11 +1,11 @@
 import {
   executeQuery,
-} from '../routines';
+} from '../routines/index.js';
 import {
   type InternalQueryMethod,
   type Notice,
   type QueryResult,
-} from '../types';
+} from '../types.js';
 import {
   type QueryResult as PgQueryResult,
 } from 'pg';

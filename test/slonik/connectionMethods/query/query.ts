@@ -4,16 +4,16 @@ import {
   ForeignKeyIntegrityConstraintViolationError,
   NotNullIntegrityConstraintViolationError,
   UniqueIntegrityConstraintViolationError,
-} from '../../../../src/errors';
+} from '../../../../src/errors.js';
 import {
   createSqlTag,
-} from '../../../../src/factories/createSqlTag';
+} from '../../../../src/factories/createSqlTag.js';
 import {
   createErrorWithCode,
-} from '../../../helpers/createErrorWithCode';
+} from '../../../helpers/createErrorWithCode.js';
 import {
   createPool,
-} from '../../../helpers/createPool';
+} from '../../../helpers/createPool.js';
 import test from 'ava';
 import delay from 'delay';
 import * as sinon from 'sinon';

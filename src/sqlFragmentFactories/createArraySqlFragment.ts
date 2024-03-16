@@ -1,19 +1,19 @@
 import {
   InvalidInputError,
   UnexpectedStateError,
-} from '../errors';
+} from '../errors.js';
 import {
   createSqlTokenSqlFragment,
-} from '../factories';
+} from '../factories/index.js';
 import {
   type ArraySqlToken,
   type SqlFragment,
-} from '../types';
+} from '../types.js';
 import {
   escapeIdentifier,
   isPrimitiveValueExpression,
   isSqlToken,
-} from '../utilities';
+} from '../utilities/index.js';
 
 export const createArraySqlFragment = (token: ArraySqlToken, greatestParameterPosition: number): SqlFragment => {
   let placeholderIndex = greatestParameterPosition;

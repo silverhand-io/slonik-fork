@@ -12,7 +12,7 @@ declare module 'pg' {
   } from 'tls';
   import {
     type NoticeMessage,
-  } from 'pg-protocol/dist/messages';
+  } from 'pg-protocol/dist/messages.js';
   import type pgTypes from 'pg-types';
 
   export type ClientConfig = {

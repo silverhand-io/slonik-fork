@@ -1,7 +1,7 @@
 import {
   parseDsn,
   stringifyDsn,
-} from '../../../src/utilities';
+} from '../../../src/utilities/index.js';
 import test from 'ava';
 
 const dsns = [

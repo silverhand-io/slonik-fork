@@ -1,16 +1,16 @@
 import {
   DataIntegrityError,
   NotFoundError,
-} from '../errors';
+} from '../errors.js';
 import {
   type InternalQueryMethod,
-} from '../types';
+} from '../types.js';
 import {
   createQueryId,
-} from '../utilities';
+} from '../utilities/index.js';
 import {
   query,
-} from './query';
+} from './query.js';
 
 /**
  * Makes a query and expects exactly one result.

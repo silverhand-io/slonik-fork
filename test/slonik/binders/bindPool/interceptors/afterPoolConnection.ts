@@ -1,9 +1,9 @@
 import {
   createSqlTag,
-} from '../../../../../src/factories/createSqlTag';
+} from '../../../../../src/factories/createSqlTag.js';
 import {
   createPool,
-} from '../../../../helpers/createPool';
+} from '../../../../helpers/createPool.js';
 import test from 'ava';
 import * as sinon from 'sinon';
 

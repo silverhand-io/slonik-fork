@@ -2,13 +2,13 @@ import {
   DataIntegrityError,
   NotFoundError,
   UnexpectedStateError,
-} from '../../../src/errors';
+} from '../../../src/errors.js';
 import {
   createSqlTag,
-} from '../../../src/factories/createSqlTag';
+} from '../../../src/factories/createSqlTag.js';
 import {
   createPool,
-} from '../../helpers/createPool';
+} from '../../helpers/createPool.js';
 import test from 'ava';
 
 const sql = createSqlTag();

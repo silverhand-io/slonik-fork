@@ -30,7 +30,7 @@ import {
   StatementTimeoutError,
   type TypeParser,
   UniqueIntegrityConstraintViolationError,
-} from '../src';
+} from '../src/index.js';
 import {
   expectTypeOf,
 } from 'expect-type';

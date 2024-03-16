@@ -1,9 +1,9 @@
 import {
   createSqlTag,
-} from '../../../../src/factories/createSqlTag';
+} from '../../../../src/factories/createSqlTag.js';
 import {
   SqlToken,
-} from '../../../../src/tokens';
+} from '../../../../src/tokens.js';
 import anyTest, {
   type TestFn,
 } from 'ava';

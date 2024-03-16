@@ -1,6 +1,6 @@
 import {
   UnexpectedStateError,
-} from '../errors';
+} from '../errors.js';
 import {
   ArrayToken,
   BinaryToken,
@@ -13,13 +13,13 @@ import {
   SqlToken,
   TimestampToken,
   UnnestToken,
-} from '../tokens';
+} from '../tokens.js';
 import {
   type SqlToken as SqlTokenType,
-} from '../types';
+} from '../types.js';
 import {
   hasOwnProperty,
-} from './hasOwnProperty';
+} from './hasOwnProperty.js';
 
 const Tokens = [
   ArrayToken,

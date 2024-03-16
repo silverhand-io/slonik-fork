@@ -1,32 +1,29 @@
 import {
   bindPool,
-} from '../binders/bindPool';
+} from '../binders/bindPool.js';
 import {
   Logger,
-} from '../Logger';
+} from '../Logger.js';
 import {
   createTypeOverrides,
-} from '../routines';
+} from '../routines/index.js';
 import {
   poolStateMap,
-} from '../state';
+} from '../state.js';
 import {
   type ClientConfigurationInput,
   type DatabasePool,
-} from '../types';
+} from '../types.js';
 import {
   createUid,
-} from '../utilities';
+} from '../utilities/index.js';
 import {
   createClientConfiguration,
-} from './createClientConfiguration';
+} from './createClientConfiguration.js';
 import {
   createPoolConfiguration,
-} from './createPoolConfiguration';
-import {
-  Client as PgClient,
-  Pool as PgPool,
-} from 'pg';
+} from './createPoolConfiguration.js';
+import pg from 'pg';
 import {
   serializeError,
 } from 'serialize-error';
@@ -51,14 +48,16 @@ export const createPool = async (
   let Pool = clientConfiguration.PgPool;
 
   if (!Pool) {
-    Pool = PgPool;
+    // eslint-disable-next-line import/no-named-as-default-member -- https://github.com/brianc/node-postgres/issues/2819
+    Pool = pg.Pool;
   }
 
   if (!Pool) {
     throw new Error('Unexpected state.');
   }
 
-  const setupClient = new PgClient({
+  // eslint-disable-next-line import/no-named-as-default-member -- https://github.com/brianc/node-postgres/issues/2819
+  const setupClient = new pg.Client({
     connectionTimeoutMillis: poolConfiguration.connectionTimeoutMillis,
     database: poolConfiguration.database,
     host: poolConfiguration.host,
@@ -77,7 +76,7 @@ export const createPool = async (
 
   await setupClient.end();
 
-  const pool: PgPool = new Pool({
+  const pool: pg.Pool = new Pool({
     ...poolConfiguration,
     types: {
       getTypeParser,

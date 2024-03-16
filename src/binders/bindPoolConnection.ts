@@ -1,6 +1,6 @@
 import {
   assertSqlSqlToken,
-} from '../assertions';
+} from '../assertions.js';
 import {
   any,
   anyFirst,
@@ -14,12 +14,12 @@ import {
   query as queryMethod,
   stream,
   transaction,
-} from '../connectionMethods';
+} from '../connectionMethods/index.js';
 import {
   type ClientConfiguration,
   type DatabasePoolConnection,
   type Logger,
-} from '../types';
+} from '../types.js';
 import {
   type PoolClient as PgPoolClient,
 } from 'pg';

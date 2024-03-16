@@ -2,10 +2,10 @@ const {
   TEST_ONLY_NON_INTEGRATION,
   TEST_ONLY_PG_INTEGRATION,
   TEST_ONLY_POSTGRES_INTEGRATION,
-// eslint-disable-next-line node/no-process-env
+  // eslint-disable-next-line node/no-process-env
 } = process.env;
 
-module.exports = () => {
+export default () => {
   let files = [
     'test/slonik/**/*',
   ];
@@ -30,13 +30,14 @@ module.exports = () => {
   }
 
   return {
-    extensions: [
-      'ts',
-    ],
     files,
-    require: [
-      'ts-node/register/transpile-only',
-    ],
+    typescript: {
+      rewritePaths: {
+        'src/': 'dist/src/',
+        'test/': 'dist/test/',
+      },
+      compile: 'tsc',
+    },
     timeout: '30s',
   };
 };

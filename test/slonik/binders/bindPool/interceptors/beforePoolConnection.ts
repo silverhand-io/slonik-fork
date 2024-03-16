@@ -1,6 +1,6 @@
 import {
   createPool,
-} from '../../../../helpers/createPool';
+} from '../../../../helpers/createPool.js';
 import test from 'ava';
 import * as sinon from 'sinon';
 

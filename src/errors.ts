@@ -1,4 +1,27 @@
-import ExtendableError from 'es6-error';
+// The original code depends on the `es6-error` package, which is not compatible with ESM.
+// Edited from https://github.com/bjyoungblood/es6-error/blob/de239cff000951417662bd4ce4a9c5a2721f1cd7/src/index.js
+class ExtendableError extends Error {
+  public constructor (message = '') {
+    super(message);
+
+    // extending Error is weird and does not propagate `message`
+    Object.defineProperty(this, 'message', {
+      configurable: true,
+      enumerable: false,
+      value: message,
+      writable: true,
+    });
+
+    Object.defineProperty(this, 'name', {
+      configurable: true,
+      enumerable: false,
+      value: this.constructor.name,
+      writable: true,
+    });
+
+    Error.captureStackTrace(this, this.constructor);
+  }
+}
 
 export class SlonikError extends ExtendableError {}
 

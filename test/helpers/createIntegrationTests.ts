@@ -9,10 +9,10 @@ import {
   StatementTimeoutError,
   TupleMovedToAnotherPartitionError,
   UnexpectedStateError,
-} from '../../src';
+} from '../../src/index.js';
 import {
   Logger,
-} from '../../src/Logger';
+} from '../../src/Logger.js';
 import anyTest, {
   type TestFn,
 } from 'ava';

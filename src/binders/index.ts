@@ -1,9 +1,9 @@
 export {
   bindPool,
-} from './bindPool';
+} from './bindPool.js';
 export {
   bindPoolConnection,
-} from './bindPoolConnection';
+} from './bindPoolConnection.js';
 export {
   bindTransactionConnection,
-} from './bindTransactionConnection';
+} from './bindTransactionConnection.js';

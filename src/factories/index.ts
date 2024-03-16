@@ -1,24 +1,24 @@
 export {
   createConnection,
-} from './createConnection';
+} from './createConnection.js';
 export {
   createMockPool,
-} from './createMockPool';
+} from './createMockPool.js';
 export {
   createMockQueryResult,
-} from './createMockQueryResult';
+} from './createMockQueryResult.js';
 export {
   createPool,
-} from './createPool';
+} from './createPool.js';
 export {
   createPrimitiveValueExpressions,
-} from './createPrimitiveValueExpressions';
+} from './createPrimitiveValueExpressions.js';
 export {
   createSqlTag,
-} from './createSqlTag';
+} from './createSqlTag.js';
 export {
   createSqlTokenSqlFragment,
-} from './createSqlTokenSqlFragment';
+} from './createSqlTokenSqlFragment.js';
 export {
   createTypeParserPreset,
-} from './createTypeParserPreset';
+} from './createTypeParserPreset.js';

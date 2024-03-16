@@ -1,6 +1,6 @@
 import {
   type TypeParser,
-} from '../../types';
+} from '../../types.js';
 
 const numericParser = (value: string) => {
   return Number.parseFloat(value);

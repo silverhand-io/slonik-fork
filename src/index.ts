@@ -1,6 +1,6 @@
 import {
   createSqlTag,
-} from './factories';
+} from './factories/index.js';
 
 export const sql = createSqlTag();
 
@@ -21,7 +21,7 @@ export {
   TupleMovedToAnotherPartitionError,
   UnexpectedStateError,
   UniqueIntegrityConstraintViolationError,
-} from './errors';
+} from './errors.js';
 export {
   createMockPool,
   createMockQueryResult,
@@ -29,47 +29,12 @@ export {
   createSqlTag,
   createSqlTokenSqlFragment,
   createTypeParserPreset,
-} from './factories';
-export * from './factories/typeParsers';
-export type {
-  ArraySqlToken,
-  BinarySqlToken,
-  ClientConfiguration,
-  ClientConfigurationInput,
-  CommonQueryMethods,
-  Connection,
-  ConnectionOptions,
-  DatabaseConnection,
-  DatabasePool,
-  DatabasePoolConnection,
-  DatabaseTransactionConnection,
-  Field,
-  IdentifierNormalizer,
-  IdentifierSqlToken,
-  Interceptor,
-  JsonBinarySqlToken,
-  JsonSqlToken,
-  ListSqlToken,
-  MockPoolOverrides,
-  PoolContext,
-  PrimitiveValueExpression,
-  Query,
-  QueryContext,
-  QueryResult,
-  QueryResultRow,
-  QueryResultRowColumn,
-  SerializableValue,
-  SqlSqlToken,
-  SqlTaggedTemplate,
-  SqlToken,
-  TaggedTemplateLiteralInvocation,
-  TypeNameIdentifier,
-  TypeParser,
-  UnnestSqlToken,
-  ValueExpression,
-} from './types';
+} from './factories/index.js';
+export * from './factories/typeParsers/index.js';
+export * as tokens from './tokens.js';
+export * from './types.js';
 export {
   isSqlToken,
   parseDsn,
   stringifyDsn,
-} from './utilities';
+} from './utilities/index.js';

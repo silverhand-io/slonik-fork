@@ -1,15 +1,15 @@
 import {
   DataIntegrityError,
-} from '../errors';
+} from '../errors.js';
 import {
   type InternalQueryMethod,
-} from '../types';
+} from '../types.js';
 import {
   createQueryId,
-} from '../utilities';
+} from '../utilities/index.js';
 import {
   many,
-} from './many';
+} from './many.js';
 
 export const manyFirst: InternalQueryMethod = async (log, connection, clientConfigurationType, slonikSql, inheritedQueryId) => {
   const queryId = inheritedQueryId ?? createQueryId();

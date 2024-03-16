@@ -1,30 +1,30 @@
 export {
   countArrayDimensions,
-} from './countArrayDimensions';
+} from './countArrayDimensions.js';
 export {
   createQueryId,
-} from './createQueryId';
+} from './createQueryId.js';
 export {
   createUid,
-} from './createUid';
+} from './createUid.js';
 export {
   escapeIdentifier,
-} from './escapeIdentifier';
+} from './escapeIdentifier.js';
 export {
   escapeLiteralValue,
-} from './escapeLiteralValue';
+} from './escapeLiteralValue.js';
 export {
   isPrimitiveValueExpression,
-} from './isPrimitiveValueExpression';
+} from './isPrimitiveValueExpression.js';
 export {
   isSqlToken,
-} from './isSqlToken';
+} from './isSqlToken.js';
 export {
   parseDsn,
-} from './parseDsn';
+} from './parseDsn.js';
 export {
   stringifyDsn,
-} from './stringifyDsn';
+} from './stringifyDsn.js';
 export {
   stripArrayNotation,
-} from './stripArrayNotation';
+} from './stripArrayNotation.js';

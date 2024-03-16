@@ -1,10 +1,10 @@
 import {
   UnexpectedStateError,
-} from '../errors';
+} from '../errors.js';
 import {
   type SqlFragment,
   type SqlSqlToken,
-} from '../types';
+} from '../types.js';
 
 export const createSqlSqlFragment = (token: SqlSqlToken, greatestParameterPosition: number): SqlFragment => {
   let sql = '';

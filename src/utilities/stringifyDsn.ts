@@ -1,6 +1,6 @@
 import {
   type ConnectionOptions,
-} from '../types';
+} from '../types.js';
 import {
   stringify,
 } from 'querystring';

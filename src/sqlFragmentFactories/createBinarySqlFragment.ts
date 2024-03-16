@@ -1,10 +1,10 @@
 import {
   InvalidInputError,
-} from '../errors';
+} from '../errors.js';
 import {
   type BinarySqlToken,
   type SqlFragment,
-} from '../types';
+} from '../types.js';
 
 export const createBinarySqlFragment = (token: BinarySqlToken, greatestParameterPosition: number): SqlFragment => {
   if (!Buffer.isBuffer(token.data)) {

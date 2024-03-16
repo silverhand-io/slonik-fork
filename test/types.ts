@@ -6,11 +6,11 @@
 import {
   createPool,
   sql,
-} from '../src';
+} from '../src/index.js';
 import {
   type PrimitiveValueExpression,
   type QueryResult,
-} from '../src/types';
+} from '../src/types.js';
 import {
   expectTypeOf,
 } from 'expect-type';
