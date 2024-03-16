@@ -1,17 +1,17 @@
 import {
   InvalidInputError,
-} from '../errors';
+} from '../errors.js';
 import {
   Logger,
-} from '../Logger';
+} from '../Logger.js';
 import {
   type JsonBinarySqlToken,
   type JsonSqlToken,
   type SqlFragment,
-} from '../types';
+} from '../types.js';
 import {
   isPlainObject,
-} from '../utilities/isPlainObject';
+} from '../utilities/isPlainObject.js';
 import safeStringify from 'fast-safe-stringify';
 import {
   serializeError,
@@ -38,7 +38,7 @@ export const createJsonSqlFragment = (token: JsonBinarySqlToken | JsonSqlToken, 
     throw new InvalidInputError('JSON payload must be a primitive value or a plain object.');
   } else {
     try {
-      value = safeStringify(token.value);
+      value = safeStringify.default(token.value);
     } catch (error) {
       log.error({
         error: serializeError(error),

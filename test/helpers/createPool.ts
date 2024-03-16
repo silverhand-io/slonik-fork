@@ -1,15 +1,15 @@
 import {
   bindPool,
-} from '../../src/binders/bindPool';
+} from '../../src/binders/bindPool.js';
 import {
   poolStateMap,
-} from '../../src/state';
+} from '../../src/state.js';
 import {
   type ClientConfigurationInput,
-} from '../../src/types';
+} from '../../src/types.js';
 import {
   Logger as log,
-} from './Logger';
+} from './Logger.js';
 import EventEmitter from 'events';
 import * as sinon from 'sinon';
 

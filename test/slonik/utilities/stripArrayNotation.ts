@@ -1,6 +1,6 @@
 import {
   stripArrayNotation,
-} from '../../../src/utilities/stripArrayNotation';
+} from '../../../src/utilities/stripArrayNotation.js';
 import test from 'ava';
 
 test('strips array notation', (t) => {

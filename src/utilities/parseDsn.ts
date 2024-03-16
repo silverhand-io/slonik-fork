@@ -1,9 +1,9 @@
 import {
   Logger,
-} from '../Logger';
+} from '../Logger.js';
 import {
   type ConnectionOptions,
-} from '../types';
+} from '../types.js';
 import {
   URL,
 } from 'url';

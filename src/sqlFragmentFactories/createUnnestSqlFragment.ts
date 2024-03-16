@@ -1,17 +1,17 @@
 import {
   InvalidInputError,
-} from '../errors';
+} from '../errors.js';
 import {
   type PrimitiveValueExpression,
   type SqlFragment,
   type UnnestSqlToken,
-} from '../types';
+} from '../types.js';
 import {
   countArrayDimensions,
   escapeIdentifier,
   isPrimitiveValueExpression,
   stripArrayNotation,
-} from '../utilities';
+} from '../utilities/index.js';
 
 export const createUnnestSqlFragment = (token: UnnestSqlToken, greatestParameterPosition: number): SqlFragment => {
   const {

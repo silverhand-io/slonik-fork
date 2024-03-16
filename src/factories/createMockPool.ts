@@ -1,23 +1,23 @@
 import {
   bindPool,
-} from '../binders/bindPool';
+} from '../binders/bindPool.js';
 import {
   Logger,
-} from '../Logger';
+} from '../Logger.js';
 import {
   poolStateMap,
-} from '../state';
+} from '../state.js';
 import {
   type ClientConfigurationInput,
   type DatabasePool,
   type MockPoolOverrides,
-} from '../types';
+} from '../types.js';
 import {
   createUid,
-} from '../utilities';
+} from '../utilities/index.js';
 import {
   createClientConfiguration,
-} from './createClientConfiguration';
+} from './createClientConfiguration.js';
 
 export const createMockPool = (
   overrides: MockPoolOverrides,

@@ -1,21 +1,21 @@
 import {
-  type TaggedTemplateLiteralInvocation,
-} from '../../../src';
-import {
   InvalidInputError,
-} from '../../../src/errors';
+} from '../../../src/errors.js';
+import {
+  type TaggedTemplateLiteralInvocation,
+} from '../../../src/index.js';
 import {
   executeQuery,
-} from '../../../src/routines/executeQuery';
+} from '../../../src/routines/executeQuery.js';
 import {
   poolClientStateMap,
-} from '../../../src/state';
+} from '../../../src/state.js';
 import {
   createClientConfiguration,
-} from '../../helpers/createClientConfiguration';
+} from '../../helpers/createClientConfiguration.js';
 import {
   createErrorWithCode,
-} from '../../helpers/createErrorWithCode';
+} from '../../helpers/createErrorWithCode.js';
 import anyTest, {
   type TestFn,
 } from 'ava';

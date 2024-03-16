@@ -1,13 +1,13 @@
 import {
-  DataIntegrityError,
-  sql,
-} from '../../../src';
-import {
   createMockPool,
-} from '../../../src/factories/createMockPool';
+} from '../../../src/factories/createMockPool.js';
 import {
   createMockQueryResult,
-} from '../../../src/factories/createMockQueryResult';
+} from '../../../src/factories/createMockQueryResult.js';
+import {
+  DataIntegrityError,
+  sql,
+} from '../../../src/index.js';
 import test from 'ava';
 import * as sinon from 'sinon';
 

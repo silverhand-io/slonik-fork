@@ -1,12 +1,12 @@
 import {
   UnexpectedStateError,
-} from '../errors';
+} from '../errors.js';
 import {
   Logger,
-} from '../Logger';
+} from '../Logger.js';
 import {
   type PrimitiveValueExpression,
-} from '../types';
+} from '../types.js';
 import safeStringify from 'fast-safe-stringify';
 
 const log = Logger.child({
@@ -28,8 +28,8 @@ export const createPrimitiveValueExpressions = (values: readonly unknown[]): rea
       primitiveValueExpressions.push(value);
     } else {
       log.warn({
-        value: JSON.parse(safeStringify(value)),
-        values: JSON.parse(safeStringify(values)),
+        value: JSON.parse(safeStringify.default(value)),
+        values: JSON.parse(safeStringify.default(values)),
       }, 'unexpected value expression');
 
       throw new UnexpectedStateError('Unexpected value expression.');

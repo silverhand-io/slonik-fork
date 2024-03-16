@@ -1,14 +1,17 @@
 import {
   createPool,
   sql,
-} from '../../../src';
+} from '../../../src/index.js';
 import {
   createIntegrationTests,
   createTestRunner,
-} from '../../helpers/createIntegrationTests';
-import {
-  Pool as PgPool,
-} from 'pg';
+} from '../../helpers/createIntegrationTests.js';
+import pg from 'pg';
+
+const {
+  // eslint-disable-next-line import/no-named-as-default-member -- https://github.com/brianc/node-postgres/issues/2819
+  Pool: PgPool,
+} = pg;
 
 const {
   test,

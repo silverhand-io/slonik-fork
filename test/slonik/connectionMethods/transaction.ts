@@ -1,12 +1,12 @@
 import {
   createClientConfiguration,
-} from '../../helpers/createClientConfiguration';
+} from '../../helpers/createClientConfiguration.js';
 import {
   createErrorWithCode,
-} from '../../helpers/createErrorWithCode';
+} from '../../helpers/createErrorWithCode.js';
 import {
   createPool,
-} from '../../helpers/createPool';
+} from '../../helpers/createPool.js';
 import test from 'ava';
 import * as sinon from 'sinon';
 

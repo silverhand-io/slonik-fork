@@ -1,6 +1,6 @@
 import {
   UnexpectedStateError,
-} from '../errors';
+} from '../errors.js';
 import {
   createArraySqlFragment,
   createBinarySqlFragment,
@@ -11,7 +11,7 @@ import {
   createSqlSqlFragment,
   createTimestampSqlFragment,
   createUnnestSqlFragment,
-} from '../sqlFragmentFactories';
+} from '../sqlFragmentFactories/index.js';
 import {
   ArrayToken,
   BinaryToken,
@@ -23,11 +23,11 @@ import {
   SqlToken,
   TimestampToken,
   UnnestToken,
-} from '../tokens';
+} from '../tokens.js';
 import {
   type SqlFragment,
   type SqlToken as SqlTokenType,
-} from '../types';
+} from '../types.js';
 
 export const createSqlTokenSqlFragment = (token: SqlTokenType, greatestParameterPosition: number): SqlFragment => {
   if (token.type === ArrayToken) {

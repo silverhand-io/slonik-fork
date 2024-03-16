@@ -1,6 +1,6 @@
 import {
   escapeLiteralValue,
-} from '../../../src/utilities';
+} from '../../../src/utilities/index.js';
 import test from 'ava';
 
 test('escapes SQL literal value', (t) => {

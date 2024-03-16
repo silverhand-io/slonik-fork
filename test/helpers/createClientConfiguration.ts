@@ -1,6 +1,6 @@
 import {
   type ClientConfiguration,
-} from '../../src/types';
+} from '../../src/types.js';
 
 export const createClientConfiguration = (): ClientConfiguration => {
   return {

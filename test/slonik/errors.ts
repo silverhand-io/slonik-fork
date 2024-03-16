@@ -1,7 +1,7 @@
 import {
   IntegrityConstraintViolationError,
   StatementCancelledError,
-} from '../../src';
+} from '../../src/index.js';
 import test from 'ava';
 
 test('IntegrityConstraintViolationError default message', (t) => {

@@ -30,13 +30,14 @@ export default () => {
   }
 
   return {
-    extensions: [
-      'ts',
-    ],
     files,
-    require: [
-      'ts-node/register/transpile-only',
-    ],
+    typescript: {
+      "rewritePaths": {
+				"src/": "dist/src/",
+        "test/": "dist/test/",
+			},
+			"compile": 'tsc'
+    },
     timeout: '30s',
   };
 };

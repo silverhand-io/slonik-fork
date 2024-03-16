@@ -1,15 +1,15 @@
 import {
   DataIntegrityError,
-} from '../errors';
+} from '../errors.js';
 import {
   type InternalQueryMethod,
-} from '../types';
+} from '../types.js';
 import {
   createQueryId,
-} from '../utilities';
+} from '../utilities/index.js';
 import {
   maybeOne,
-} from './maybeOne';
+} from './maybeOne.js';
 
 /**
  * Makes a query and expects exactly one result.

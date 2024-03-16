@@ -1,13 +1,13 @@
 import {
   QueryStream,
-} from '../QueryStream';
+} from '../QueryStream.js';
 import {
   executeQuery,
-} from '../routines';
+} from '../routines/index.js';
 import {
   type Interceptor,
   type InternalStreamFunction,
-} from '../types';
+} from '../types.js';
 import type Stream from 'stream';
 import {
   obj,

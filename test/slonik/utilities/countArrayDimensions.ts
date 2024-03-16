@@ -1,6 +1,6 @@
 import {
   countArrayDimensions,
-} from '../../../src/utilities/countArrayDimensions';
+} from '../../../src/utilities/countArrayDimensions.js';
 import test from 'ava';
 
 test('returns the number of array dimensions', (t) => {

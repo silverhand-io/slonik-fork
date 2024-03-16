@@ -1,6 +1,6 @@
 import {
   type TypeParser,
-} from '../types';
+} from '../types.js';
 import {
   type Client as PgClient,
 } from 'pg';

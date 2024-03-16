@@ -1,9 +1,9 @@
 import {
   InvalidInputError,
-} from '../errors';
+} from '../errors.js';
 import {
   Logger,
-} from '../Logger';
+} from '../Logger.js';
 import {
   ArrayToken,
   BinaryToken,
@@ -15,7 +15,7 @@ import {
   SqlToken,
   TimestampToken,
   UnnestToken,
-} from '../tokens';
+} from '../tokens.js';
 import {
   type ArraySqlToken,
   type BinarySqlToken,
@@ -34,15 +34,15 @@ import {
   type TypeNameIdentifier,
   type UnnestSqlToken,
   type ValueExpression,
-} from '../types';
+} from '../types.js';
 import {
   escapeLiteralValue,
   isPrimitiveValueExpression,
   isSqlToken,
-} from '../utilities';
+} from '../utilities/index.js';
 import {
   createSqlTokenSqlFragment,
-} from './createSqlTokenSqlFragment';
+} from './createSqlTokenSqlFragment.js';
 import safeStringify from 'fast-safe-stringify';
 
 const log = Logger.child({
@@ -71,8 +71,8 @@ const sql: SqlTaggedTemplate = (
     if (token === undefined) {
       log.debug({
         index,
-        parts: JSON.parse(safeStringify(parts)),
-        values: JSON.parse(safeStringify(values)),
+        parts: JSON.parse(safeStringify.default(parts)),
+        values: JSON.parse(safeStringify.default(values)),
       }, 'bound values');
 
       throw new InvalidInputError('SQL tag cannot be bound an undefined value.');
@@ -89,7 +89,7 @@ const sql: SqlTaggedTemplate = (
       log.error({
         constructedSql: rawSql,
         index,
-        offendingToken: JSON.parse(safeStringify(token)),
+        offendingToken: JSON.parse(safeStringify.default(token)),
       }, 'unexpected value expression');
 
       throw new TypeError('Unexpected value expression.');

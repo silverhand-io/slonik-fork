@@ -1,21 +1,21 @@
 import {
   assertSqlSqlToken,
-} from '../assertions';
+} from '../assertions.js';
 import {
   transaction,
-} from '../connectionMethods';
+} from '../connectionMethods/index.js';
 import {
   createConnection,
-} from '../factories';
+} from '../factories/index.js';
 import {
   getPoolState,
-} from '../state';
+} from '../state.js';
 import {
   type ClientConfiguration,
   type DatabasePool,
   type Logger,
   type TaggedTemplateLiteralInvocation,
-} from '../types';
+} from '../types.js';
 import {
   type Pool as PgPool,
 } from 'pg';

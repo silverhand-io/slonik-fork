@@ -1,6 +1,6 @@
 import {
   assertSqlSqlToken,
-} from '../assertions';
+} from '../assertions.js';
 import {
   any,
   anyFirst,
@@ -14,15 +14,15 @@ import {
   oneFirst,
   query as queryMethod,
   stream,
-} from '../connectionMethods';
+} from '../connectionMethods/index.js';
 import {
   getPoolClientState,
-} from '../state';
+} from '../state.js';
 import {
   type ClientConfiguration,
   type DatabaseTransactionConnection,
   type Logger,
-} from '../types';
+} from '../types.js';
 import {
   type PoolClient as PgPoolClient,
 } from 'pg';

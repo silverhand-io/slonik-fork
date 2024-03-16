@@ -1,15 +1,15 @@
 import {
   bindPoolConnection,
-} from '../binders';
+} from '../binders/index.js';
 import {
   ConnectionError,
   UnexpectedStateError,
-} from '../errors';
+} from '../errors.js';
 import {
   getPoolClientState,
   getPoolState,
   poolClientStateMap,
-} from '../state';
+} from '../state.js';
 import {
   type ClientConfiguration,
   type Connection,
@@ -18,10 +18,10 @@ import {
   type Logger,
   type MaybePromise,
   type TaggedTemplateLiteralInvocation,
-} from '../types';
+} from '../types.js';
 import {
   createUid,
-} from '../utilities';
+} from '../utilities/index.js';
 import {
   type Pool as PgPool,
   type PoolClient as PgPoolClient,

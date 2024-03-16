@@ -1,8 +1,6 @@
 {
   "extends": "@silverhand/ts-config/tsconfig.base",
   "compilerOptions": {
-    "moduleResolution": "bundler",
-    "module": "esnext",
     "outDir": "dist",
     "noImplicitReturns": true,
     // We need to enable the following flags in the future

@@ -1,7 +1,7 @@
 import {
   type QueryResult,
   type QueryResultRow,
-} from '../types';
+} from '../types.js';
 
 export const createMockQueryResult = (rows: readonly QueryResultRow[]): QueryResult<QueryResultRow> => {
   return {

@@ -1,9 +1,9 @@
 import {
   createClientConfiguration,
-} from '../../../src/factories/createClientConfiguration';
+} from '../../../src/factories/createClientConfiguration.js';
 import {
   createTypeParserPreset,
-} from '../../../src/factories/createTypeParserPreset';
+} from '../../../src/factories/createTypeParserPreset.js';
 import test from 'ava';
 
 const defaultConfiguration = {

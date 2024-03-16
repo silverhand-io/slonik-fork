@@ -2,13 +2,13 @@
 
 import {
   Logger as log,
-} from '../Logger';
+} from '../Logger.js';
 import {
   type ClientConfiguration,
-} from '../types';
+} from '../types.js';
 import {
   parseDsn,
-} from '../utilities';
+} from '../utilities/index.js';
 import {
   type PoolConfig,
 } from 'pg';

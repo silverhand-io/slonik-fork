@@ -1,6 +1,6 @@
 import {
   type TypeParser,
-} from '../../types';
+} from '../../types.js';
 
 const dateParser = (value: string) => {
   return value;

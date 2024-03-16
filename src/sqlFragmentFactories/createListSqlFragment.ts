@@ -1,19 +1,19 @@
 import {
   InvalidInputError,
-} from '../errors';
+} from '../errors.js';
 import {
   createPrimitiveValueExpressions,
   createSqlTokenSqlFragment,
-} from '../factories';
+} from '../factories/index.js';
 import {
   type ListSqlToken,
   type PrimitiveValueExpression,
   type SqlFragment,
-} from '../types';
+} from '../types.js';
 import {
   isPrimitiveValueExpression,
   isSqlToken,
-} from '../utilities';
+} from '../utilities/index.js';
 
 export const createListSqlFragment = (
   token: ListSqlToken,

@@ -1,6 +1,6 @@
 import {
   TRANSACTION_ROLLBACK_ERROR_PREFIX,
-} from '../constants';
+} from '../constants.js';
 import {
   BackendTerminatedError,
   CheckIntegrityConstraintViolationError,
@@ -12,10 +12,10 @@ import {
   TupleMovedToAnotherPartitionError,
   UnexpectedStateError,
   UniqueIntegrityConstraintViolationError,
-} from '../errors';
+} from '../errors.js';
 import {
   getPoolClientState,
-} from '../state';
+} from '../state.js';
 import {
   type ClientConfiguration,
   type Interceptor,
@@ -28,10 +28,10 @@ import {
   type QueryResult,
   type QueryResultRow,
   type TaggedTemplateLiteralInvocation,
-} from '../types';
+} from '../types.js';
 import {
   createQueryId,
-} from '../utilities';
+} from '../utilities/index.js';
 import {
   getStackTrace,
 } from 'get-stack-trace';

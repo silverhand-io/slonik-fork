@@ -1,6 +1,6 @@
 import {
   type TypeParser,
-} from '../../types';
+} from '../../types.js';
 
 const timestampParser = (value: string | null) => {
   return value === null ? value : Date.parse(value + ' UTC');

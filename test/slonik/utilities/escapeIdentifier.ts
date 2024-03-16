@@ -1,6 +1,6 @@
 import {
   escapeIdentifier,
-} from '../../../src/utilities';
+} from '../../../src/utilities/index.js';
 import test from 'ava';
 
 test('escapes SQL identifiers', (t) => {

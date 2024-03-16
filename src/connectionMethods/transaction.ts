@@ -1,22 +1,22 @@
 import {
   bindTransactionConnection,
-} from '../binders';
+} from '../binders/index.js';
 import {
   TRANSACTION_ROLLBACK_ERROR_PREFIX,
-} from '../constants';
+} from '../constants.js';
 import {
   BackendTerminatedError,
   UnexpectedStateError,
-} from '../errors';
+} from '../errors.js';
 import {
   getPoolClientState,
-} from '../state';
+} from '../state.js';
 import {
   type InternalTransactionFunction,
-} from '../types';
+} from '../types.js';
 import {
   createUid,
-} from '../utilities';
+} from '../utilities/index.js';
 import {
   serializeError,
 } from 'serialize-error';

@@ -1,10 +1,10 @@
 import {
   InvalidInputError,
-} from '../errors';
+} from '../errors.js';
 import {
   type DateSqlToken,
   type SqlFragment,
-} from '../types';
+} from '../types.js';
 
 export const createDateSqlFragment = (token: DateSqlToken, greatestParameterPosition: number): SqlFragment => {
   if (!(token.date instanceof Date)) {

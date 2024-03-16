@@ -1,9 +1,9 @@
 import {
   UnexpectedStateError,
-} from './errors';
+} from './errors.js';
 import {
   type TypeOverrides,
-} from './types';
+} from './types.js';
 import {
   type DeferredPromise,
 } from 'p-defer';

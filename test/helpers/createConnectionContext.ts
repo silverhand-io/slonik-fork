@@ -1,6 +1,6 @@
 import {
   type ConnectionContext,
-} from '../../src/types';
+} from '../../src/types.js';
 
 export const createConnectionContext = (): ConnectionContext => {
   return {

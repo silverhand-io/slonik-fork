@@ -1,6 +1,6 @@
 export {
   createTypeOverrides,
-} from './createTypeOverrides';
+} from './createTypeOverrides.js';
 export {
   executeQuery,
-} from './executeQuery';
+} from './executeQuery.js';

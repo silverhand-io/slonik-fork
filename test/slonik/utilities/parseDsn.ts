@@ -1,9 +1,9 @@
 import {
   type ConnectionOptions,
-} from '../../../src/types';
+} from '../../../src/types.js';
 import {
   parseDsn,
-} from '../../../src/utilities';
+} from '../../../src/utilities/index.js';
 import test from 'ava';
 
 const testParse = test.macro((t, connectionOptions: ConnectionOptions) => {
