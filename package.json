@@ -1,10 +1,10 @@
 {
-  "name": "slonik",
+  "name": "@silverhand/slonik",
   "license": "BSD-3-Clause",
   "type": "module",
   "main": "./dist/src/index.js",
   "description": "A Node.js PostgreSQL client with strict types, detailed logging and assertions.",
-  "version": "0.0.0-development",
+  "version": "31.0.0-beta.0",
   "files": [
     "./src",
     "./dist"
@@ -14,6 +14,7 @@
     "url": "https://github.com/gajus/slonik"
   },
   "scripts": {
+    "prepack": "pnpm build",
     "build": "rm -fr ./dist && tsc",
     "lint": "eslint ./src ./test",
     "test": "nyc ava --verbose --serial"
@@ -87,5 +88,8 @@
     "require": [],
     "silent": true,
     "sourceMap": false
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
