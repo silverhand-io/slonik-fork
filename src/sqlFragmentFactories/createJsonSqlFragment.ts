@@ -9,10 +9,10 @@ import {
   type JsonSqlToken,
   type SqlFragment,
 } from '../types';
-import safeStringify from 'fast-safe-stringify';
 import {
   isPlainObject,
-} from 'is-plain-object';
+} from '../utilities/isPlainObject';
+import safeStringify from 'fast-safe-stringify';
 import {
   serializeError,
 } from 'serialize-error';
