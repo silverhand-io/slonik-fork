@@ -25,9 +25,8 @@ export const createClientConfiguration = (clientUserConfigurationInput?: ClientC
     statementTimeout: 60_000,
     transactionRetryLimit: 5,
     typeParsers,
-
     ...clientUserConfigurationInput,
-  };
+  } satisfies ClientConfiguration;
 
   if (configuration.maximumPoolSize < 1) {
     throw new InvalidConfigurationError('maximumPoolSize must be equal to or greater than 1.');
