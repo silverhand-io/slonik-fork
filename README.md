@@ -57,105 +57,123 @@ Note: Using this project does not require TypeScript. It is a regular ES6 module
 <a name="slonik-contents"></a>
 ## Contents
 
-* [Slonik](#user-content-slonik)
-    * [Sponsors](#user-content-slonik-sponsors)
-    * [Principles](#user-content-slonik-principles)
-    * [Features](#user-content-slonik-features)
-    * [Contents](#user-content-slonik-contents)
-    * [About Slonik](#user-content-slonik-about-slonik)
-        * [Battle-Tested](#user-content-slonik-about-slonik-battle-tested)
-        * [Origin of the name](#user-content-slonik-about-slonik-origin-of-the-name)
-        * [Repeating code patterns and type safety](#user-content-slonik-about-slonik-repeating-code-patterns-and-type-safety)
-        * [Protecting against unsafe connection handling](#user-content-slonik-about-slonik-protecting-against-unsafe-connection-handling)
-        * [Protecting against unsafe transaction handling](#user-content-slonik-about-slonik-protecting-against-unsafe-transaction-handling)
-        * [Protecting against unsafe value interpolation](#user-content-slonik-about-slonik-protecting-against-unsafe-value-interpolation)
-    * [Documentation](#user-content-slonik-documentation)
-    * [Usage](#user-content-slonik-usage)
-        * [Connection URI](#user-content-slonik-usage-connection-uri)
-        * [Create connection](#user-content-slonik-usage-create-connection)
-        * [End connection pool](#user-content-slonik-usage-end-connection-pool)
-        * [Describing the current state of the connection pool](#user-content-slonik-usage-describing-the-current-state-of-the-connection-pool)
-        * [API](#user-content-slonik-usage-api)
-        * [Default configuration](#user-content-slonik-usage-default-configuration)
-        * [Checking out a client from the connection pool](#user-content-slonik-usage-checking-out-a-client-from-the-connection-pool)
-        * [Mocking Slonik](#user-content-slonik-usage-mocking-slonik)
-    * [How are they different?](#user-content-slonik-how-are-they-different)
-        * [`pg` vs `slonik`](#user-content-slonik-how-are-they-different-pg-vs-slonik)
-        * [`pg-promise` vs `slonik`](#user-content-slonik-how-are-they-different-pg-promise-vs-slonik)
-        * [`postgres` vs `slonik`](#user-content-slonik-how-are-they-different-postgres-vs-slonik)
-    * [Type parsers](#user-content-slonik-type-parsers)
-        * [Built-in type parsers](#user-content-slonik-type-parsers-built-in-type-parsers)
-    * [Interceptors](#user-content-slonik-interceptors)
-        * [Interceptor methods](#user-content-slonik-interceptors-interceptor-methods)
-        * [Community interceptors](#user-content-slonik-interceptors-community-interceptors)
-    * [Recipes](#user-content-slonik-recipes)
-        * [Inserting large number of rows](#user-content-slonik-recipes-inserting-large-number-of-rows)
-        * [Routing queries to different connections](#user-content-slonik-recipes-routing-queries-to-different-connections)
-        * [Building Utility Statements](#user-content-slonik-recipes-building-utility-statements)
-    * [Runtime validation](#user-content-slonik-runtime-validation)
-        * [Motivation](#user-content-slonik-runtime-validation-motivation)
-        * [Example use of `sql.type`](#user-content-slonik-runtime-validation-example-use-of-sql-type)
-        * [Performance penalty](#user-content-slonik-runtime-validation-performance-penalty)
-        * [Unknown keys](#user-content-slonik-runtime-validation-unknown-keys)
-        * [Handling schema validation errors](#user-content-slonik-runtime-validation-handling-schema-validation-errors)
-        * [Inferring types](#user-content-slonik-runtime-validation-inferring-types)
-        * [Transforming results](#user-content-slonik-runtime-validation-transforming-results)
-    * [`sql` tag](#user-content-slonik-sql-tag)
-        * [Typing `sql` tag](#user-content-slonik-sql-tag-typing-sql-tag)
-    * [Value placeholders](#user-content-slonik-value-placeholders)
-        * [Tagged template literals](#user-content-slonik-value-placeholders-tagged-template-literals)
-        * [Manually constructing the query](#user-content-slonik-value-placeholders-manually-constructing-the-query)
-        * [Nesting `sql`](#user-content-slonik-value-placeholders-nesting-sql)
-    * [Query building](#user-content-slonik-query-building)
-        * [`sql.array`](#user-content-slonik-query-building-sql-array)
-        * [`sql.binary`](#user-content-slonik-query-building-sql-binary)
-        * [`sql.date`](#user-content-slonik-query-building-sql-date)
-        * [`sql.identifier`](#user-content-slonik-query-building-sql-identifier)
-        * [`sql.interval`](#user-content-slonik-query-building-sql-interval)
-        * [`sql.join`](#user-content-slonik-query-building-sql-join)
-        * [`sql.json`](#user-content-slonik-query-building-sql-json)
-        * [`sql.jsonb`](#user-content-slonik-query-building-sql-jsonb)
-        * [`sql.literalValue`](#user-content-slonik-query-building-sql-literalvalue)
-        * [`sql.timestamp`](#user-content-slonik-query-building-sql-timestamp)
-        * [`sql.unnest`](#user-content-slonik-query-building-sql-unnest)
-    * [Query methods](#user-content-slonik-query-methods)
-        * [`any`](#user-content-slonik-query-methods-any)
-        * [`anyFirst`](#user-content-slonik-query-methods-anyfirst)
-        * [`exists`](#user-content-slonik-query-methods-exists)
-        * [`copyFromBinary`](#user-content-slonik-query-methods-copyfrombinary)
-        * [`many`](#user-content-slonik-query-methods-many)
-        * [`manyFirst`](#user-content-slonik-query-methods-manyfirst)
-        * [`maybeOne`](#user-content-slonik-query-methods-maybeone)
-        * [`maybeOneFirst`](#user-content-slonik-query-methods-maybeonefirst)
-        * [`one`](#user-content-slonik-query-methods-one)
-        * [`oneFirst`](#user-content-slonik-query-methods-onefirst)
-        * [`query`](#user-content-slonik-query-methods-query)
-        * [`stream`](#user-content-slonik-query-methods-stream)
-        * [`transaction`](#user-content-slonik-query-methods-transaction)
-    * [Utilities](#user-content-slonik-utilities)
-        * [`parseDsn`](#user-content-slonik-utilities-parsedsn)
-        * [`stringifyDsn`](#user-content-slonik-utilities-stringifydsn)
-    * [Error handling](#user-content-slonik-error-handling)
-        * [Original `node-postgres` error](#user-content-slonik-error-handling-original-node-postgres-error)
-        * [Handling `BackendTerminatedError`](#user-content-slonik-error-handling-handling-backendterminatederror)
-        * [Handling `CheckIntegrityConstraintViolationError`](#user-content-slonik-error-handling-handling-checkintegrityconstraintviolationerror)
-        * [Handling `ConnectionError`](#user-content-slonik-error-handling-handling-connectionerror)
-        * [Handling `DataIntegrityError`](#user-content-slonik-error-handling-handling-dataintegrityerror)
-        * [Handling `ForeignKeyIntegrityConstraintViolationError`](#user-content-slonik-error-handling-handling-foreignkeyintegrityconstraintviolationerror)
-        * [Handling `NotFoundError`](#user-content-slonik-error-handling-handling-notfounderror)
-        * [Handling `NotNullIntegrityConstraintViolationError`](#user-content-slonik-error-handling-handling-notnullintegrityconstraintviolationerror)
-        * [Handling `StatementCancelledError`](#user-content-slonik-error-handling-handling-statementcancellederror)
-        * [Handling `StatementTimeoutError`](#user-content-slonik-error-handling-handling-statementtimeouterror)
-        * [Handling `UniqueIntegrityConstraintViolationError`](#user-content-slonik-error-handling-handling-uniqueintegrityconstraintviolationerror)
-        * [Handling `TupleMovedToAnotherPartitionError`](#user-content-slonik-error-handling-handling-tuplemovedtoanotherpartitionerror)
-    * [Types](#user-content-slonik-types)
-    * [Debugging](#user-content-slonik-debugging)
-        * [Logging](#user-content-slonik-debugging-logging)
-        * [Capture stack trace](#user-content-slonik-debugging-capture-stack-trace)
-    * [Syntax Highlighting](#user-content-slonik-syntax-highlighting)
-        * [Atom Syntax Highlighting Plugin](#user-content-slonik-syntax-highlighting-atom-syntax-highlighting-plugin)
-        * [VS Code Syntax Highlighting Extension](#user-content-slonik-syntax-highlighting-vs-code-syntax-highlighting-extension)
-    * [Development](#user-content-slonik-development)
+- [Sponsors](#sponsors)
+- [Principles](#principles)
+- [Features](#features)
+- [Contents](#contents)
+- [About Slonik](#about-slonik)
+  - [Battle-Tested](#battle-tested)
+  - [Origin of the name](#origin-of-the-name)
+  - [Repeating code patterns and type safety](#repeating-code-patterns-and-type-safety)
+  - [Protecting against unsafe connection handling](#protecting-against-unsafe-connection-handling)
+  - [Protecting against unsafe transaction handling](#protecting-against-unsafe-transaction-handling)
+  - [Protecting against unsafe value interpolation](#protecting-against-unsafe-value-interpolation)
+- [Documentation](#documentation)
+- [Usage](#usage)
+  - [Connection URI](#connection-uri)
+  - [Create connection](#create-connection)
+  - [End connection pool](#end-connection-pool)
+  - [Describing the current state of the connection pool](#describing-the-current-state-of-the-connection-pool)
+  - [API](#api)
+  - [Default configuration](#default-configuration)
+    - [Default interceptors](#default-interceptors)
+    - [Default type parsers](#default-type-parsers)
+    - [Default timeouts](#default-timeouts)
+    - [Known limitations of using pg-native with Slonik](#known-limitations-of-using-pg-native-with-slonik)
+  - [Checking out a client from the connection pool](#checking-out-a-client-from-the-connection-pool)
+  - [Mocking Slonik](#mocking-slonik)
+- [How are they different?](#how-are-they-different)
+  - [pg vs slonik](#pg-vs-slonik)
+  - [pg-promise vs slonik](#pg-promise-vs-slonik)
+  - [postgres vs slonik](#postgres-vs-slonik)
+- [Type parsers](#type-parsers)
+  - [Built-in type parsers](#built-in-type-parsers)
+- [Interceptors](#interceptors)
+  - [Interceptor methods](#interceptor-methods)
+    - [afterPoolConnection](#afterpoolconnection)
+    - [afterQueryExecution](#afterqueryexecution)
+    - [beforeQueryExecution](#beforequeryexecution)
+    - [beforeQueryResult](#beforequeryresult)
+    - [beforeTransformQuery](#beforetransformquery)
+    - [beforePoolConnection](#beforepoolconnection)
+    - [beforePoolConnectionRelease](#beforepoolconnectionrelease)
+    - [queryExecutionError](#queryexecutionerror)
+    - [transformQuery](#transformquery)
+    - [transformRow](#transformrow)
+  - [Community interceptors](#community-interceptors)
+- [Recipes](#recipes)
+  - [Inserting large number of rows](#inserting-large-number-of-rows)
+  - [Routing queries to different connections](#routing-queries-to-different-connections)
+  - [Building Utility Statements](#building-utility-statements)
+- [Runtime validation](#runtime-validation)
+  - [Motivation](#motivation)
+  - [Example use of sql.type](#example-use-of-sqltype)
+  - [Performance penalty](#performance-penalty)
+  - [Unknown keys](#unknown-keys)
+  - [Handling schema validation errors](#handling-schema-validation-errors)
+  - [Inferring types](#inferring-types)
+  - [Transforming results](#transforming-results)
+- [sql tag](#sql-tag)
+  - [Typing sql tag](#typing-sql-tag)
+- [Value placeholders](#value-placeholders)
+  - [Tagged template literals](#tagged-template-literals)
+  - [Manually constructing the query](#manually-constructing-the-query)
+  - [Nesting sql](#nesting-sql)
+- [Query building](#query-building)
+  - [sql.array](#sqlarray)
+    - [sql.array memberType](#sqlarray-membertype)
+    - [sql.array vs sql.join](#sqlarray-vs-sqljoin)
+  - [sql.binary](#sqlbinary)
+  - [sql.date](#sqldate)
+  - [sql.identifier](#sqlidentifier)
+  - [sql.interval](#sqlinterval)
+    - [Dynamic intervals without sql.interval](#dynamic-intervals-without-sqlinterval)
+  - [sql.join](#sqljoin)
+  - [sql.json](#sqljson)
+  - [sql.jsonb](#sqljsonb)
+  - [sql.literalValue](#sqlliteralvalue)
+  - [sql.timestamp](#sqltimestamp)
+  - [sql.unnest](#sqlunnest)
+- [Query methods](#query-methods)
+  - [any](#any)
+  - [anyFirst](#anyfirst)
+  - [exists](#exists)
+  - [many](#many)
+  - [manyFirst](#manyfirst)
+  - [maybeOne](#maybeone)
+  - [maybeOneFirst](#maybeonefirst)
+  - [one](#one)
+  - [oneFirst](#onefirst)
+  - [query](#query)
+  - [stream](#stream)
+  - [transaction](#transaction)
+    - [Transaction nesting](#transaction-nesting)
+    - [Transaction retrying](#transaction-retrying)
+    - [Query retrying](#query-retrying)
+- [Utilities](#utilities)
+  - [parseDsn](#parsedsn)
+  - [stringifyDsn](#stringifydsn)
+- [Error handling](#error-handling)
+  - [Original node-postgres error](#original-node-postgres-error)
+  - [Handling BackendTerminatedError](#handling-backendterminatederror)
+  - [Handling CheckIntegrityConstraintViolationError](#handling-checkintegrityconstraintviolationerror)
+  - [Handling ConnectionError](#handling-connectionerror)
+  - [Handling DataIntegrityError](#handling-dataintegrityerror)
+  - [Handling ForeignKeyIntegrityConstraintViolationError](#handling-foreignkeyintegrityconstraintviolationerror)
+  - [Handling NotFoundError](#handling-notfounderror)
+  - [Handling NotNullIntegrityConstraintViolationError](#handling-notnullintegrityconstraintviolationerror)
+  - [Handling StatementCancelledError](#handling-statementcancellederror)
+  - [Handling StatementTimeoutError](#handling-statementtimeouterror)
+  - [Handling UniqueIntegrityConstraintViolationError](#handling-uniqueintegrityconstraintviolationerror)
+  - [Handling TupleMovedToAnotherPartitionError](#handling-tuplemovedtoanotherpartitionerror)
+- [Types](#types)
+- [Debugging](#debugging)
+  - [Logging](#logging)
+  - [Capture stack trace](#capture-stack-trace)
+- [Syntax Highlighting](#syntax-highlighting)
+  - [Atom Syntax Highlighting Plugin](#atom-syntax-highlighting-plugin)
+  - [VS Code Syntax Highlighting Extension](#vs-code-syntax-highlighting-extension)
+- [Development](#development)
 
 
 <a name="user-content-slonik-about-slonik"></a>
@@ -2119,72 +2137,6 @@ pool.oneFirst(sql`
 `)
 ```
 
-<a name="user-content-slonik-query-methods-copyfrombinary"></a>
-<a name="slonik-query-methods-copyfrombinary"></a>
-### <code>copyFromBinary</code>
-
-```ts
-(
-  streamQuery: TaggedTemplateLiteralInvocation,
-  tupleList: any[][],
-  columnTypes: TypeNameIdentifier[],
-) => Promise<null>;
-```
-
-Copies from a binary stream.
-
-The binary stream is constructed using user supplied `tupleList` and `columnTypes` values.
-
-Example:
-
-```ts
-const tupleList = [
-  [
-    1,
-    'baz'
-  ],
-  [
-    2,
-    'baz'
-  ]
-];
-
-const columnTypes = [
-  'int4',
-  'text'
-];
-
-await connection.copyFromBinary(
-  sql`
-    COPY foo
-    (
-      id,
-      baz
-    )
-    FROM STDIN BINARY
-  `,
-  tupleList,
-  columnTypes
-);
-```
-
-<a name="user-content-slonik-query-methods-copyfrombinary-limitations"></a>
-<a name="slonik-query-methods-copyfrombinary-limitations"></a>
-#### Limitations
-
-* Tuples cannot contain `NULL` values.
-
-<a name="user-content-slonik-query-methods-copyfrombinary-implementation-notes"></a>
-<a name="slonik-query-methods-copyfrombinary-implementation-notes"></a>
-#### Implementation notes
-
-`copyFromBinary` implementation is designed to minimize the query execution time at the cost of increased script memory usage and execution time. This is achieved by separating data encoding from feeding data to PostgreSQL, i.e. all data passed to `copyFromBinary` is first encoded and then fed to PostgreSQL (contrast this to using a stream with encoding transformation to feed data to PostgreSQL).
-
-<a name="user-content-slonik-query-methods-copyfrombinary-related-documentation"></a>
-<a name="slonik-query-methods-copyfrombinary-related-documentation"></a>
-#### Related documentation
-
-* [`COPY` documentation](https://www.postgresql.org/docs/current/sql-copy.html)
 
 <a name="user-content-slonik-query-methods-many"></a>
 <a name="slonik-query-methods-many"></a>

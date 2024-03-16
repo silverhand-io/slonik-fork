@@ -4,7 +4,6 @@ import {
 import {
   any,
   anyFirst,
-  copyFromBinary,
   exists,
   many,
   manyFirst,
@@ -49,18 +48,6 @@ export const bindPoolConnection = (
         connection,
         clientConfiguration,
         slonikSql,
-      );
-    },
-    copyFromBinary: (slonikSql, values, columnTypes) => {
-      assertSqlSqlToken(slonikSql);
-
-      return copyFromBinary(
-        parentLog,
-        connection,
-        clientConfiguration,
-        slonikSql,
-        values,
-        columnTypes,
       );
     },
     exists: (slonikSql) => {

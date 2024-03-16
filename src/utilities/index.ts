@@ -8,9 +8,6 @@ export {
   createUid,
 } from './createUid';
 export {
-  encodeTupleList,
-} from './encodeTupleList';
-export {
   escapeIdentifier,
 } from './escapeIdentifier';
 export {
