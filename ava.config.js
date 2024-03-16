@@ -5,7 +5,7 @@ const {
 // eslint-disable-next-line node/no-process-env
 } = process.env;
 
-module.exports = () => {
+export default () => {
   let files = [
     'test/slonik/**/*',
   ];
