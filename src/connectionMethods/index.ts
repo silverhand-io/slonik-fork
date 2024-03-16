@@ -5,9 +5,6 @@ export {
   anyFirst,
 } from './anyFirst';
 export {
-  copyFromBinary,
-} from './copyFromBinary';
-export {
   exists,
 } from './exists';
 export {

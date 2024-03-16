@@ -83,34 +83,6 @@ export const bindPool = (
         },
       );
     },
-    copyFromBinary: (copyQuery, values, columnTypes) => {
-      assertSqlSqlToken(copyQuery);
-
-      return createConnection(
-        parentLog,
-        pool,
-        clientConfiguration,
-        'IMPLICIT_QUERY',
-        (
-          connectionLog,
-          connection,
-          boundConnection,
-        ) => {
-          return boundConnection.copyFromBinary(
-            copyQuery,
-            values,
-            columnTypes,
-          );
-        },
-        (newPool) => {
-          return newPool.copyFromBinary(
-            copyQuery,
-            values,
-            columnTypes,
-          );
-        },
-      );
-    },
     end: async () => {
       const poolState = getPoolState(pool);
 

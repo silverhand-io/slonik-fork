@@ -143,13 +143,6 @@ export type StreamFunction = (
   config?: QueryStreamConfig
 ) => Promise<Record<string, unknown> | null>;
 
-export type QueryCopyFromBinaryFunction = (
-  streamQuery: TaggedTemplateLiteralInvocation,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  tupleList: ReadonlyArray<readonly any[]>,
-  columnTypes: readonly TypeNameIdentifier[],
-) => Promise<Record<string, unknown> | null>;
-
 export type CommonQueryMethods = {
   readonly any: QueryAnyFunction,
   readonly anyFirst: QueryAnyFirstFunction,
@@ -171,7 +164,6 @@ export type DatabaseTransactionConnection = CommonQueryMethods & {
 export type TransactionFunction<T> = (connection: DatabaseTransactionConnection) => Promise<T>;
 
 export type DatabasePoolConnection = CommonQueryMethods & {
-  readonly copyFromBinary: QueryCopyFromBinaryFunction,
   readonly stream: StreamFunction,
 };
 
@@ -187,7 +179,6 @@ export type PoolState = {
 export type DatabasePool = CommonQueryMethods & {
   readonly configuration: ClientConfiguration,
   readonly connect: <T>(connectionRoutine: ConnectionRoutine<T>) => Promise<T>,
-  readonly copyFromBinary: QueryCopyFromBinaryFunction,
   readonly end: () => Promise<void>,
   readonly getPoolState: () => PoolState,
   readonly stream: StreamFunction,
@@ -395,16 +386,6 @@ export type InternalQueryMethod<R = any> = (
   slonikSql: TaggedTemplateLiteralInvocation,
   uid?: QueryId,
 ) => R;
-
-export type InternalCopyFromBinaryFunction = (
-  log: Logger,
-  connection: PgPoolClient,
-  clientConfiguration: ClientConfiguration,
-  slonikSql: TaggedTemplateLiteralInvocation,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  tupleList: ReadonlyArray<readonly any[]>,
-  columnTypes: readonly TypeNameIdentifier[],
-) => Promise<Record<string, unknown>>;
 
 export type InternalStreamFunction = (
   log: Logger,
