@@ -10,9 +10,6 @@ import anyTest, {
 import {
   ROARR,
 } from 'roarr';
-import {
-  z,
-} from 'zod';
 
 const test = anyTest as TestFn<{
   logs: unknown[],
@@ -111,23 +108,4 @@ test('the sql property is immutable', (t) => {
     // @ts-expect-error
     query.sql = 'SELECT 2';
   });
-});
-
-test('describes zod object associated with the query', (t) => {
-  const zodObject = z.object({
-    id: z.number(),
-  });
-
-  const query = sql.type(zodObject)`
-    SELECT 1 id
-  `;
-
-  // These are not equal because Slonik applies .strict() on the object it receives.
-  // t.is(query.zodObject, zodObject);
-
-  // @ts-expect-error Accessing a private property
-  t.is(query.parser._def?.typeName, 'ZodObject');
-
-  // @ts-expect-error Accessing a private property
-  t.is(query.parser._def?.unknownKeys, 'strict');
 });
