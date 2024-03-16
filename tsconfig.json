@@ -1,25 +1,15 @@
 {
+  "extends": "@silverhand/ts-config/tsconfig.base",
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "esModuleInterop": true,
-    "module": "commonjs",
-    "lib": [
-      "es2021"
-    ],
-    "moduleResolution": "node",
-    "noImplicitAny": false,
-    "noImplicitReturns": true,
-    "useUnknownInCatchVariables": false,
+    "moduleResolution": "bundler",
+    "module": "esnext",
     "outDir": "dist",
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "es2018"
+    "noImplicitReturns": true,
+    // We need to enable the following flags in the future
+    "noImplicitAny": false,
+    "useUnknownInCatchVariables": false,
+    "noUncheckedIndexedAccess": false,
   },
-  "exclude": [
-    "dist",
-    "node_modules"
-  ],
   "include": [
     "src",
     "test"

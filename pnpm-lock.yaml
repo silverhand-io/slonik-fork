@@ -64,6 +64,9 @@ devDependencies:
   '@semantic-release/npm':
     specifier: ^9.0.1
     version: 9.0.2(semantic-release@19.0.5)
+  '@silverhand/ts-config':
+    specifier: ^5.0.0
+    version: 5.0.0(typescript@5.4.2)
   '@types/sinon':
     specifier: ^10.0.6
     version: 10.0.20
@@ -1138,6 +1141,15 @@ packages:
       semantic-release: 19.0.5
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@silverhand/ts-config@5.0.0(typescript@5.4.2):
+    resolution: {integrity: sha512-KpX9b1Dsp6vm6xboEsi4P/g0HtRVYDW2dzYM4s2r3Gs0XnYRJjnURa9y8z3R4F96ax/gkqXOf6w+EAsp9P0/wg==}
+    engines: {node: ^20.9.0}
+    peerDependencies:
+      typescript: ^5.3.3
+    dependencies:
+      typescript: 5.4.2
     dev: true
 
   /@sinonjs/commons@1.8.6:
