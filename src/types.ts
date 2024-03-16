@@ -300,11 +300,6 @@ export type IdentifierSqlToken = {
   readonly type: typeof tokens.IdentifierToken,
 };
 
-export type IntervalSqlToken = {
-  readonly interval: IntervalInput,
-  readonly type: typeof tokens.IntervalToken,
-};
-
 export type ListSqlToken = {
   readonly glue: SqlSqlToken,
   readonly members: readonly ValueExpression[],
@@ -321,8 +316,7 @@ export type JsonSqlToken = {
   readonly value: SerializableValue,
 };
 
-export type SqlSqlToken<T = UserQueryResultRow> = {
-  readonly parser?: Parser<T>,
+export type SqlSqlToken = {
   readonly sql: string,
   readonly type: typeof tokens.SqlToken,
   readonly values: readonly PrimitiveValueExpression[],
@@ -352,7 +346,6 @@ export type SqlToken =
   | BinarySqlToken
   | DateSqlToken
   | IdentifierSqlToken
-  | IntervalSqlToken
   | JsonBinarySqlToken
   | JsonSqlToken
   | ListSqlToken
@@ -364,29 +357,6 @@ export type ValueExpression = PrimitiveValueExpression | SqlToken;
 
 export type NamedAssignment = {
   readonly [key: string]: ValueExpression,
-};
-
-/**
- * Usually, a `ZodIssue` - but in theory you could construct your own, or wrap zod.
- * Re-defined here to avoid a hard dependency on zod.
- */
-export type ParserIssue = {
-  code: string,
-  message: string,
-  path: Array<number | string>,
-};
-
-/**
- * Usually, a `zod` type.
- * Re-defined here to avoid a hard dependency on zod.
- */
-export type Parser<T> = {
-  _def: {
-    typeName: 'ZodObject',
-    unknownKeys: 'strict' | 'strip',
-  },
-  safeParse: (input: unknown) => { data: T, success: true, } | { error: { issues: ParserIssue[], }, success: false, },
-  strict: () => Parser<T>,
 };
 
 // @todo may want to think how to make this extendable.
@@ -402,13 +372,11 @@ export type SqlTaggedTemplate<T extends UserQueryResultRow = QueryResultRow> = {
   binary: (data: Buffer) => BinarySqlToken,
   date: (date: Date) => DateSqlToken,
   identifier: (names: readonly string[]) => IdentifierSqlToken,
-  interval: (interval: IntervalInput) => IntervalSqlToken,
   join: (members: readonly ValueExpression[], glue: SqlSqlToken) => ListSqlToken,
   json: (value: SerializableValue) => JsonSqlToken,
   jsonb: (value: SerializableValue) => JsonBinarySqlToken,
   literalValue: (value: string) => SqlSqlToken,
   timestamp: (date: Date) => TimestampSqlToken,
-  type: <U extends UserQueryResultRow = T>(parser: Parser<U>) => (template: TemplateStringsArray, ...values: ValueExpression[]) => TaggedTemplateLiteralInvocation<U>,
   unnest: (
     // Value might be ReadonlyArray<ReadonlyArray<PrimitiveValueExpression>>,
     // or it can be infinitely nested array, e.g.

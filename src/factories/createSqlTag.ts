@@ -9,7 +9,6 @@ import {
   BinaryToken,
   DateToken,
   IdentifierToken,
-  IntervalToken,
   JsonBinaryToken,
   JsonToken,
   ListToken,
@@ -22,8 +21,6 @@ import {
   type BinarySqlToken,
   type DateSqlToken,
   type IdentifierSqlToken,
-  type IntervalInput,
-  type IntervalSqlToken,
   type JsonBinarySqlToken,
   type JsonSqlToken,
   type ListSqlToken,
@@ -152,15 +149,6 @@ sql.identifier = (
   };
 };
 
-sql.interval = (
-  interval: IntervalInput,
-): IntervalSqlToken => {
-  return {
-    interval,
-    type: IntervalToken,
-  };
-};
-
 sql.join = (
   members: readonly ValueExpression[],
   glue: SqlSqlToken,
@@ -206,23 +194,6 @@ sql.timestamp = (
   return {
     date,
     type: TimestampToken,
-  };
-};
-
-sql.type = (
-  parser,
-) => {
-  let strictParser = parser;
-
-  if (parser._def.unknownKeys === 'strip') {
-    strictParser = parser.strict();
-  }
-
-  return (...args) => {
-    return {
-      ...sql(...args),
-      parser: strictParser,
-    };
   };
 };
 

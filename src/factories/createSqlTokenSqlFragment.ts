@@ -6,7 +6,6 @@ import {
   createBinarySqlFragment,
   createDateSqlFragment,
   createIdentifierSqlFragment,
-  createIntervalSqlFragment,
   createJsonSqlFragment,
   createListSqlFragment,
   createSqlSqlFragment,
@@ -18,7 +17,6 @@ import {
   BinaryToken,
   DateToken,
   IdentifierToken,
-  IntervalToken,
   JsonBinaryToken,
   JsonToken,
   ListToken,
@@ -40,8 +38,6 @@ export const createSqlTokenSqlFragment = (token: SqlTokenType, greatestParameter
     return createDateSqlFragment(token, greatestParameterPosition);
   } else if (token.type === IdentifierToken) {
     return createIdentifierSqlFragment(token);
-  } else if (token.type === IntervalToken) {
-    return createIntervalSqlFragment(token, greatestParameterPosition);
   } else if (token.type === JsonBinaryToken) {
     return createJsonSqlFragment(token, greatestParameterPosition, true);
   } else if (token.type === JsonToken) {
