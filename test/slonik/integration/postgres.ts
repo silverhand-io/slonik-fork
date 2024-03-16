@@ -1,3 +1,5 @@
+// CAUTION: ava 6 fails to exit from this file, currently using ava ^5.0.0
+
 import {
   createIntegrationTests,
   createTestRunner,
