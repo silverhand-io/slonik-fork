@@ -16,5 +16,6 @@ export const createQueryContext = (): QueryContext => {
       },
     },
     poolId: '1',
+    sandbox: {},
   };
 };

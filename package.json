@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@types/pg": "^8.11.2",
+    "camelcase": "^8.0.0",
     "fast-safe-stringify": "^2.1.1",
     "get-stack-trace": "^2.1.1",
     "iso8601-duration": "^2.1.2",
