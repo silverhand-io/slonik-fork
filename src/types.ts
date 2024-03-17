@@ -367,6 +367,12 @@ export type SqlTaggedTemplate<T extends UserQueryResultRow = QueryResultRow> = {
   json: (value: SerializableValue) => JsonSqlToken,
   jsonb: (value: SerializableValue) => JsonBinarySqlToken,
   literalValue: (value: string) => SqlSqlToken,
+  /**
+   * **CAUTION:** Use this function with care.
+   *
+   * Directly injects a raw SQL string into the query.
+   */
+  raw: (rawSql: string) => SqlSqlToken,
   timestamp: (date: Date) => TimestampSqlToken,
   unnest: (
     // Value might be ReadonlyArray<ReadonlyArray<PrimitiveValueExpression>>,
