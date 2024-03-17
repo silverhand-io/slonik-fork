@@ -1,6 +1,6 @@
 import {
   createFieldNameTransformationInterceptor,
-} from '../../../src/interceptors/fieldNameTransformation/index.js';
+} from '../../../src/interceptors/createFieldNameTransformationInterceptor/index.js';
 import {
   createQueryContext,
 } from '../../helpers/createQueryContext.js';

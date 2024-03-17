@@ -30,7 +30,7 @@ export default () => {
   }
 
   return {
-    files: ['test/slonik/interceptors/**/*'],
+    files,
     typescript: {
       rewritePaths: {
         'src/': 'dist/src/',

@@ -4,12 +4,10 @@ import {
 } from '../../types.js';
 import camelcase from 'camelcase';
 
-/**
- * @property format The only supported format is CAMEL_CASE.
- * @property test Tests whether the field should be formatted. The default behaviour is to include all fields that match ^[a-z0-9_]+$ regex.
- */
 type Configuration = {
+  /** The only supported format is CAMEL_CASE. */
   format: 'CAMEL_CASE',
+  /** Tests whether the field should be formatted. The default behavior is to include all fields that match ^[a-z0-9_]+$ regex. */
   test?: (field: Field) => boolean,
 };
 

@@ -31,6 +31,7 @@ export {
   createTypeParserPreset,
 } from './factories/index.js';
 export * from './factories/typeParsers/index.js';
+export * from './interceptors/index.js';
 export * as tokens from './tokens.js';
 export * from './types.js';
 export {

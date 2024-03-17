@@ -1,3 +1,8 @@
+> [!Note]
+> This is an edited version.
+
+---
+
 # slonik-interceptor-field-name-transformation
 
 [![Travis build status](http://img.shields.io/travis/gajus/slonik-interceptor-field-name-transformation/master.svg?style=flat-square)](https://travis-ci.com/github/gajus/slonik-interceptor-field-name-transformation)
