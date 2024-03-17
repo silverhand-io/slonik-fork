@@ -158,6 +158,33 @@ export const createIntegrationTests = (
     await t.throwsAsync(firstConnection.oneFirst(sql`SELECT 1`));
   });
 
+  test('allows sql.raw to be used', async (t) => {
+    const pool = await createPool(t.context.dsn, {
+      PgPool,
+    });
+
+    await pool.query(sql`
+      CREATE TABLE people (
+        id SERIAL PRIMARY KEY,
+        name text
+      )
+    `);
+
+    await pool.query(sql`
+      INSERT INTO people (name)
+      VALUES (${sql.raw('\'foo\'')})
+    `);
+
+    const result = await pool.oneFirst(sql`
+      SELECT name
+      FROM people
+    `);
+
+    t.is(result, 'foo');
+
+    await pool.end();
+  });
+
   // We have to test serialization due to the use of different drivers (pg and postgres).
   test('serializes json', async (t) => {
     const pool = await createPool(t.context.dsn, {

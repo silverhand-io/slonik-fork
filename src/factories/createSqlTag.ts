@@ -208,6 +208,16 @@ sql.unnest = (
   };
 };
 
+sql.raw = (
+  rawSql: string,
+): SqlSqlToken => {
+  return {
+    sql: rawSql,
+    type: SqlToken,
+    values: [],
+  };
+};
+
 export const createSqlTag = <T extends QueryResultRow = QueryResultRow>(): SqlTaggedTemplate<T> => {
   return sql;
 };
